@@ -1,5 +1,11 @@
 <?php
 
+// Выведем данные о пользователе
+$details = R::find('about', 1);
+
+$aboutName = $details[1]['name'];
+$aboutDescription = $details[1]['description'];
+
 $title = "Главная";
 $content = "Содержимое главной страницы";
 

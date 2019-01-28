@@ -1,5 +1,11 @@
 <?php
 
+// DB SETTINGS
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'WD05-project-grigorovich');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+
 // Устанавливает путь до корневой директории скрипта по протоколу HTTP
 // $_SERVER['REQUEST_SCHEME'] не использую, а вручную прописываю протокол http, потому что эта переменная поддерживается не всеми серверами
 define('HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/');
