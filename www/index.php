@@ -2,6 +2,8 @@
 
 require "config.php";
 require "db.php";
+require ROOT . "libs/functions.php";
+$errors = array();
 
 // ===============================
 // 

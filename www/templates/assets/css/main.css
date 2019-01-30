@@ -724,16 +724,16 @@ a.title-medium,
   border-bottom-right-radius: 0;
 }
 .notification__error--top {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
 }
 .notification__error--text {
   position: relative;
   border-radius: 4px;
   background-color: #e0e9ee;
   width: 100%;
-  padding: 59px 16px 16px;
+  padding: 0 16px 16px;
 }
 .notification__error--text span {
   display: block;

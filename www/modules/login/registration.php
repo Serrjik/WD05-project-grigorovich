@@ -1,5 +1,39 @@
 <?php
 
+// Если форма отправлена - то делаем регистрацию
+if ( isset($_POST['register']) ) {
+	// echo "<pre>";
+	// print_r($_POST);
+	// echo "</pre>";
+
+	if ( trim($_POST['email']) == '' ) {
+		$errors[] = ['title' => 'Введите Email', 'desc' => '<p>Email обязателен для регистрации на сайте</p>' ];
+	}
+
+	if ( trim($_POST['password']) == '' ) {
+		$errors[] = ['title' => 'Введите Пароль' ];
+	}
+
+	// Проверка на то что пользователь уже существует
+	// Функция R::count() возвращает количество найденных записей
+	// R::count(в_какой_таблице_искать, поле_которое_соответствует_определенному_значению, требуемое_значение)
+	if ( R::count('users', 'email = ?', array($_POST['email']) ) ) {
+		$errors[] = [
+			'title' => 'Пользователь с таким email уже зарегистрирован', 
+			'desc' => '<p>Используйте другой email адрес, или воспользуйтесь восстановлением пароля.</p>' 
+		];
+	}
+
+	if ( empty($errors) ) {
+		// Alright, Register!
+		$user = R::dispense('users');
+		$user->email = htmlentities($_POST['email'], ENT_QUOTES);
+		$user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+		R::store($user);
+	}
+
+}
+
 // Готовим контент для центральной части
 ob_start();
 require ROOT . "templates/login/form-registration.tpl";
