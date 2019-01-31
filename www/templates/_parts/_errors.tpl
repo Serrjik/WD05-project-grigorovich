@@ -3,7 +3,7 @@
 
 		<!-- Однострочная ошибка -->
 		<div class="notification__error"><?=$error['title']?></div>
-		
+
 	<?php elseif ( count($error) == 2 ): ?>
 
 		<!-- Ошибка с описанием -->

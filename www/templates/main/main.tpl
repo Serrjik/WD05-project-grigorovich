@@ -3,3 +3,7 @@
 	<h2><?=$aboutName?></h2>
 	<p><?=$aboutDescription?></p>
 </main>
+
+<!-- <pre>
+<?php echo '$_SESSION<br>'; print_r($_SESSION); ?>
+</pre> -->
