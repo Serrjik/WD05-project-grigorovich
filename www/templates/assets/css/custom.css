@@ -1,3 +1,8 @@
+.notification__error {
+	margin-bottom: 16px;
+	line-height: 24px;
+}
+
 .notification__error--top {
 	margin-left: -16px;
 	margin-right: -16px;
