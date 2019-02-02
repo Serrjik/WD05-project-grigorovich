@@ -2,7 +2,7 @@
 	<div class="admin-panel-user">
 		<div class="avatar"><img src="../img/avatars/avatar-admin.png" /></div>
 		<div class="admin-panel-user-wrap">
-			<div class="admin-panel-user-wrap__name">Юрий Ключевский</div>
+			<div class="admin-panel-user-wrap__name"><?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['surname']?></div>
 			<a class="badge" href="<?=HOST?>profile">Администратор</a>
 		</div>
 	</div>

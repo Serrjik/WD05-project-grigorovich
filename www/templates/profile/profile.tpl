@@ -1,15 +1,8 @@
-<div class="sign-in-user">
-	<div class="user__avatar">
-		<div class="avatar"><img src="../img/avatars/avatar-admin.png" /></div>
-	</div>
-	<div class="user__desc">
-		<div class="user__text"><span class="name">Юрий Ключевский</span><span class="desc">Пользователь</span></div>
-		<div class="user__buttons"><a class="button button-profile" href="#!">Профиль</a><a class="button button-profile" href="#!">Выход</a></div>
-	</div>
-</div>
 <div class="sticky-footer-content">
 	<div class="container user-content pt-50 pb-120 relative">
-		<div class="profile__button"><a class="button button-edit" href="#!">Редактировать</a></div>
+		<div class="profile__button">
+			<a class="button button-edit" href="<?=HOST?>profile-edit">Редактировать</a>
+		</div>
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
 				<div class="profile">
@@ -19,10 +12,13 @@
 					<div class="profile-user__avatar">
 						<div class="avatar avatar--big"><img src="../img/avatars/avatar-1-big.jpg" /></div>
 					</div>
-					<div class="profile-user-description"><span>Имя и фамилия</span>
-						<div class="profile-user-description__title">Емельян Казаков</div><span>Email</span>
-						<div class="profile-user-description__email">pilat@mail.ru</div><span>Страна, Город</span>
-						<div class="profile-user-description__city">Россия, Казань</div>
+					<div class="profile-user-description">
+						<span>Имя и фамилия</span>
+						<div class="profile-user-description__title"><?=$currentUser->name?> <?=$currentUser->surname?></div>
+						<span>Email</span>
+						<div class="profile-user-description__email"><?=$currentUser->email?></div>
+						<span>Страна, Город</span>
+						<div class="profile-user-description__city"><?=$currentUser->country?>, <?=$currentUser->city?></div>
 					</div>
 				</div>
 				<h2 class="title-2">Комментарии пользователя</h2>

@@ -29,3 +29,12 @@
 .notification__error--text p a {
 	color: #38505e !important;
 }
+
+.profile__button {
+	z-index: 2;
+}
+
+a.button {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

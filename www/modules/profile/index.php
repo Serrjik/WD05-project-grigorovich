@@ -1,5 +1,9 @@
 <?php
 
+$title = "Профиль пользователя";
+
+$currentUser = $_SESSION['logged_user'];
+
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
