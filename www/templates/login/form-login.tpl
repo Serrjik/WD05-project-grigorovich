@@ -15,7 +15,7 @@
 				<span class="form__checkbox"></span>Запомнить меня
 			</label>
 		</div>
-		<span><a class="registration-form__password-recovery" href="#!">Забыл пароль</a></span>
+		<span><a class="registration-form__password-recovery" href="<?=HOST?>lost-password">Забыл пароль</a></span>
 	</div>
 	<div class="registration-form__button"><input class="button button-enter button-small" type="submit" value="Войти" name="login" /></div>
 </form>

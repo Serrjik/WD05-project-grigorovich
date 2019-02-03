@@ -4,12 +4,6 @@
 			<div class="offset-md-1 col-md-10">
 				<h1 class="title-1">Редактировать профиль</h1>
 
-				<!-- <?php 
-				echo "<pre>";
-				print_r($_FILES);
-				echo "</pre>";
-				?> -->
-
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
 				<form class="edit-user-profile-form" enctype="multipart/form-data" action="<?=HOST?>profile-edit" method="POST" novalidate>

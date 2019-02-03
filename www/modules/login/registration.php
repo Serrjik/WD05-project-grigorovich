@@ -7,9 +7,6 @@ $pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i';
 
 // Если форма отправлена - то делаем регистрацию
 if ( isset($_POST['register']) ) {
-	// echo "<pre>";
-	// print_r($_POST);
-	// echo "</pre>";
 
 	if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email', 'desc' => '<p>Email обязателен для регистрации на сайте</p>' ];
@@ -18,7 +15,7 @@ if ( isset($_POST['register']) ) {
 	if ( preg_match($pattern, $_POST['email']) !== 1 ) {
 		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
-	
+
 	if ( trim($_POST['password']) == '' ) {
 		$errors[] = ['title' => 'Введите Пароль' ];
 	}
