@@ -22,7 +22,11 @@
 						<span>Email</span>
 						<div class="profile-user-description__email"><?=$currentUser->email?></div>
 						<span>Страна, Город</span>
-						<div class="profile-user-description__city"><?=$currentUser->country?>, <?=$currentUser->city?></div>
+						<div class="profile-user-description__city"><?=$currentUser->country?>
+						<?php if ( ($currentUser->country != '') && ($currentUser->city != '') ): ?>
+						, 
+						<?php endif ?>
+						<?=$currentUser->city?></div>
 					</div>
 				</div>
 				<h2 class="title-2">Комментарии пользователя</h2>
