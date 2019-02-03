@@ -4,9 +4,15 @@
 			<div class="offset-md-1 col-md-10">
 				<h1 class="title-1">Редактировать профиль</h1>
 
+				<!-- <?php 
+				echo "<pre>";
+				print_r($_FILES);
+				echo "</pre>";
+				?> -->
+
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
-				<form class="edit-user-profile-form" enctype="multipart-form-data" action="<?=HOST?>profile-edit" method="POST">
+				<form class="edit-user-profile-form" enctype="multipart/form-data" action="<?=HOST?>profile-edit" method="POST">
 					<div class="row edit-user-profile-form__row">
 						<div class="col-md-4">
 							<label class="label">Имя<input class="input-text" type="text" placeholder="Введите имя" name="name" value="<?=$currentUser->name?>" /></label>
@@ -54,3 +60,4 @@
 		</div>
 	</div>
 </div>
+<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script>

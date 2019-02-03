@@ -10,7 +10,11 @@
 				</div>
 				<div class="profile-user">
 					<div class="profile-user__avatar">
-						<div class="avatar avatar--big"><img src="../img/avatars/avatar-1-big.jpg" /></div>
+						<div class="avatar avatar--big">
+							<?php if ( $_SESSION['logged_user']['avatar'] != '' ) { ?>
+								<img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->name?> <?=$currentUser->surname?>" />
+							<?php }	?>
+						</div>
 					</div>
 					<div class="profile-user-description">
 						<span>Имя и фамилия</span>
