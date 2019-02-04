@@ -734,6 +734,7 @@ a.title-medium,
   background-color: #e0e9ee;
   width: 100%;
   padding: 0 16px 16px;
+  margin-bottom: 16px;
 }
 .notification__error--text span {
   display: block;

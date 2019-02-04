@@ -6,6 +6,7 @@ require ROOT . "libs/functions.php";
 session_start();
 
 $errors = array();
+$success = array();
 
 // ===============================
 // 

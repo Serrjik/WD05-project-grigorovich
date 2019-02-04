@@ -54,4 +54,3 @@
 		</div>
 	</div>
 </div>
-<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script>

@@ -1,3 +1,4 @@
+.notification__success,
 .notification__error {
 	margin-bottom: 16px;
 	line-height: 24px;
@@ -8,6 +9,11 @@
 	margin-right: -16px;
 	margin-bottom: 16px;
 	width: auto;
+}
+
+.notification__success--top-border-radius {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .notification__error--text {

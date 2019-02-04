@@ -15,7 +15,7 @@ if ( isset($_POST['profile-update']) ) {
 		$errors[] = ['title' => 'Введите Email' ];
 	}
 
-	if ( preg_match($pattern, $_POST['email']) !== 1 ) {
+	if ( preg_match($pattern, trim($_POST['email'])) !== 1 ) {
 		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
 
