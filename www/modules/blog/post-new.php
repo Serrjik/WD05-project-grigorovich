@@ -1,11 +1,11 @@
 <?php
 
-$title = "Блог - все записи";
+$title = "Блог - Добавить новый пост";
 
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-require ROOT . "templates/blog/blog-all-posts.tpl";
+require ROOT . "templates/blog/post-new.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

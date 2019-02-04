@@ -56,6 +56,17 @@ switch ( $uri[0] ) {
 	case 'profile-edit':
 		require ROOT . "modules/profile/edit.php";
 		break;
+
+	// ::::::::::::::::::::: BLOG :::::::::::::::::::::
+
+	case 'blog':
+		include ROOT . "modules/blog/index.php";
+		break;
+
+	case 'blog/post-new':
+		include ROOT . "modules/blog/post-new.php";
+		break;
+
 	// :::::::
 
 	case 'about':
@@ -64,10 +75,6 @@ switch ( $uri[0] ) {
 
 	case 'contacts':
 		include "modules/contacts/index.php";
-		break;
-
-	case 'blog':
-		include "modules/blog/index.php";
 		break;
 
 	default:
