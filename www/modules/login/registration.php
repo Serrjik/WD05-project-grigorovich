@@ -10,9 +10,7 @@ if ( isset($_POST['register']) ) {
 
 	if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email', 'desc' => '<p>Email обязателен для регистрации на сайте</p>' ];
-	}
-
-	if ( preg_match($pattern, $_POST['email']) !== 1 ) {
+	} else if ( preg_match($pattern, $_POST['email']) !== 1 ) {
 		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
 

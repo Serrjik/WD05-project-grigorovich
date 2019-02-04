@@ -2,14 +2,12 @@
 
 if ( isset($_POST['lost-password'])) {
 	
-	if ( trim($_POST['email']) == '' ) {
-		$errors[] = ['title' => 'Введите Email' ];
-	}
-
 	// email address matching pattern
 	$pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i';
-
-	if ( preg_match($pattern, trim($_POST['email'])) !== 1 ) {
+	
+	if ( trim($_POST['email']) == '' ) {
+		$errors[] = ['title' => 'Введите Email' ];
+	} else if ( preg_match($pattern, trim($_POST['email'])) !== 1 ) {
 		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
 

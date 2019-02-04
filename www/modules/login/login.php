@@ -2,6 +2,9 @@
 
 $title = "Вход на сайт";
 
+// email address matching pattern
+$pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i';
+
 // Если форма отправлена - то делаем вход
 if ( isset($_POST['login']) ) {
 	// echo "<pre>";
@@ -10,6 +13,8 @@ if ( isset($_POST['login']) ) {
 
 	if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email' ];
+	} else if ( preg_match($pattern, $_POST['email']) !== 1 ) {
+		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
 
 	if ( trim($_POST['password']) == '' ) {

@@ -1,4 +1,4 @@
-<form class="registration-form" method="POST" action="<?=HOST?>login">
+<form class="registration-form" method="POST" action="<?=HOST?>login" novalidate>
 	<h1 class="title-1 registration-form__caption">Вход на сайт</h1>
 	<div class="registration-form__error">
 		
