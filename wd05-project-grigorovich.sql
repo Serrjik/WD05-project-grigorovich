@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 05, 2019 at 12:26 AM
--- Server version: 8.0.12
--- PHP Version: 7.2.10
+-- Generation Time: Feb 05, 2019 at 04:53 PM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wd05-project-grigorovich`
+-- Database: `WD05-project-grigorovich`
 --
 
 -- --------------------------------------------------------
@@ -40,6 +40,31 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `name`, `description`) VALUES
 (1, 'Сергей Григорович', 'Я веб-разработчик.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `author_id` int(11) UNSIGNED DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL,
+  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`) VALUES
+(1, 'Новый первый пост', 'Текст первого поста', 1, '2019-02-05 12:38:46', '205277309605.jpg'),
+(2, 'Ещё один первый пост', 'Текст поста', 1, '2019-02-05 16:41:52', '205277309605.jpg'),
+(3, 'Второй пост', 'Текст второго поста', 1, '2019-02-05 16:44:36', '471071331648.jpg'),
+(4, '3-й пост', 'Текст', 1, '2019-02-05 16:48:31', '869713270369.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,6 +110,13 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_posts_author` (`author_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -99,13 +131,16 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
