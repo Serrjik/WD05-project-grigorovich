@@ -108,4 +108,22 @@ function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
 }
 
+// Функция обрезает строку до длины не более указанного количества символов и отсекает символы после последнего пробела
+function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8' ) {
+
+	if ( mb_strlen($string, $encoding) <= $length ) {
+		return $string;
+	}
+
+	// функция mb_substr() Корректно выполняет substr() для многобайтовых кодировок, учитывая количество символов.
+	$temp = mb_substr($string, 0, $length, $encoding);
+	// Функция mb_strripos() — Поиск последнего вхождения одной строки в другую, нечувствительный к регистру
+	// Позиция последнего пробела в обрезанной строке
+	$spacePosition = mb_strripos($temp, " ", 0, $encoding);
+
+	$result = mb_substr($temp, 0, $spacePosition, $encoding) . "...";
+	return $result;
+
+}
+
 ?>

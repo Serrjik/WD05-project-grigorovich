@@ -52,3 +52,20 @@ a.button {
 .navigation__item--active a {
 	text-decoration: none;
 }
+
+.card-post {
+	margin-bottom: 50px;
+	margin-right: 30px;
+}
+
+.card-post:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+.card-post__image {
+	overflow: hidden;
+}
+
+.blog-post-heading-wrapper {
+	width: 730px;
+}
