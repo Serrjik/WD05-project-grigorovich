@@ -1,7 +1,7 @@
 	<!-- build:jsLibs js/libs.js -->
 	<script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
 	<!-- build:js Main js/main.js -->
-	<!-- <script src="<?=HOST?>templates/assets/js/main.js"></script> -->
+	<script src="<?=HOST?>templates/assets/js/main.js"></script>
 	<!-- Скрипт для проверки поля ввода формы восстановления пароля -->
 	<?php if ( @$_SERVER['REDIRECT_URL'] == '/lost-password'): ?>
 		<script src="<?=HOST?>templates/assets/js/check-lost-password-form.js"></script>
