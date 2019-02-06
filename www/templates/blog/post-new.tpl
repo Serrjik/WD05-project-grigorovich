@@ -9,7 +9,7 @@
 				<form class="post-add-form" action="<?=HOST?>blog/post-new" method="POST" enctype="multipart/form-data">
 					<div class="post-add-form__name">
 						<label class="label">Название
-							<input class="input-text" type="text" placeholder="Введите название" name="postTitle" />
+							<input class="input-text" type="text" value="<?=(trim(@$_POST['postTitle']) != '' ) ? $_POST['postTitle'] : '';?>" name="postTitle" placeholder="Введите название" />
 						</label>
 					</div>
 					<div class="post-add-form__file">
@@ -22,7 +22,7 @@
 					</div>
 					<div class="post-add-form__textarea">
 						<label class="label">Содержание
-							<textarea class="textarea" type="text" placeholder="Введите описание" name="postText"></textarea>
+							<textarea class="textarea" type="text" placeholder="Введите описание" name="postText"><?=(trim(@$_POST['postText']) != '' ) ? $_POST['postText'] : '';?></textarea>
 						</label>
 					</div>
 					<div class="post-add-form-button">
