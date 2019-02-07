@@ -2,6 +2,16 @@ $(document).ready(function() {
 	
 	// $(".left-panel").customScrollbar({preventDefaultScroll: true});
 	
+	// Отслеживание и скрытие уведомлений об успехе
+	setTimeout(function(){
+		$('[data-notify-hide]').slideUp(400);
+	}, 2000);
+
+	$('[data-notify-hide]').dblclick(function(){
+		$(this).slideUp(400);
+	});
+	// - END - Отслеживание и скрытие уведомлений об успехе
+
 });
 
 //Map block
