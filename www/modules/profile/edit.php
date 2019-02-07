@@ -54,7 +54,6 @@ if ( isset($_POST['profile-update']) ) {
 
 			if ( $fileSize > 2097152 ) {
 				$errors[] = ['title' => 'Файл изображения не должен быть более 2 Мбайт' ];
-				// echo "Файл изображения не должен быть более 2 Мбайт";
 			}
 
 			if ( !preg_match("/\.(gif|jpg|jpeg|png)$/i", $fileName) ) {

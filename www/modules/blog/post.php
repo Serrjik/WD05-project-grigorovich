@@ -1,13 +1,15 @@
 <?php
 
-$title = "Блог - все записи";
+$title = "Блог - пост";
 
-$posts = R::find('posts', 'ORDER BY id DESC');
+// If you want a single bean instead of an array, use R::findOne()
+// If no beans match the criteria, this function will return NULL. 
+$post  = R::findOne( 'posts', ' id = ? ', array($_GET['id']) );
 
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-require ROOT . "templates/blog/blog-all-posts.tpl";
+require ROOT . "templates/blog/blog-post.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
