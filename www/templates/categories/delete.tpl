@@ -9,11 +9,6 @@
 				<!-- <?php require ROOT . 'templates/_parts/_errors.tpl'; ?> -->
 
 				<form class="post-add-form" action="<?=HOST?>blog/category-delete?id=<?=$cat['id']?>" method="POST">
-					<div class="post-add-form__name">
-						<label class="label">Название категории
-							<input class="input-text" type="text" name="catTitle" placeholder="Введите название" value="<?=$cat['cat_title']?>" />
-						</label>
-					</div>
 					<div class="post-add-form-button">
 						<input class="button button-delete" type="submit" value="Удалить" name="catDelete" />
 						<div class="post-add-form-button__cancel">
