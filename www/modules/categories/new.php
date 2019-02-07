@@ -6,7 +6,17 @@ if ( isset($_POST['catNew']) ) {
 	
 	if ( trim($_POST['catTitle']) == '' ) {
 		$errors[] = ['title' => 'Введите Название категории' ];
+	} else {
+
+		$sameCategory = R::findOne( 'categories', 'cat_title = ? ', [ trim($_POST['catTitle']) ] );
+		$sameCategoryName = $sameCategory['catTitle'];
+
+		if ( $sameCategoryName != '' ) {
+			$errors[] = ['title' => 'Такая категория уже существует' ];
+		}
+		
 	}
+
 
 	if ( empty($errors) ) {
 		$cat = R::dispense('categories');

@@ -2,6 +2,7 @@
 
 $title = "Категории блога";
 
+$cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 // Готовим контент для центральной части
 ob_start();
