@@ -18,7 +18,7 @@ if ( isset($_POST['postNew']) ) {
 
 		$post = R::dispense( 'posts' );
 		$post->title = htmlentities(trim($_POST['postTitle']));
-		$post->cat = htmlentities(trim($_POST['postCat']));
+		$post->cat = htmlentities(trim($_POST['postCatf']));
 		$post->text = trim($_POST['postText']);
 		$post->authorId = $_SESSION['logged_user']['id'];
 		$post->dateTime = R::isoDateTime();
