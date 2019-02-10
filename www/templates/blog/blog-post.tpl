@@ -2,14 +2,23 @@
 	<div class="container user-content pt-70 make-relative">
 		<div class="row">
 			<div class="col-10 offset-1">
-				<div class="blog__button--edit"><input class="button button-edit" type="submit" value="Редактировать" name="name" /></div>
+				<div class="blog__button--edit">
+					<a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" />Редактировать</a>
+					<a class="button button-delete" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>" />Удалить</a>
+				</div>
 				<div class="blog-post">
 					<div class="blog-post-heading-wrapper">
 						<h1 class="blog-post__title title-1"><?=$post['title']?></h1>
 						<div class="blog-post__info">
-							<div class="blog-post__info-name">Емельян Казаков</div>
-							<div class="blog-post__info-category"><a href="#!">Путешествия</a></div>
-							<div class="blog-post__info-date"><?=rus_date("j F Y H:i", strtotime($post['date_time']))?></div>
+							<div class="blog-post__info-name"><?=$post['name']?> <?=$post['surname']?></div>
+							<div class="blog-post__info-category"><a href="#!"><?=$post['cat_title']?></a></div>
+							<div class="blog-post__info-date">
+								<?php if ( $post['update_time'] != NULL ): ?>
+									<?=rus_date("j F Y H:i", strtotime($post['update_time']))?>
+								<?php else: ?>
+									<?=rus_date("j F Y H:i", strtotime($post['date_time']))?>
+								<?php endif ?>
+							</div>
 							<div class="blog-post__info-comment-count"><a href="#!">2 комментария</a></div>
 						</div>
 					</div>

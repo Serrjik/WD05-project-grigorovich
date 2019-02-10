@@ -69,3 +69,7 @@ a.button {
 .blog-post-heading-wrapper {
 	width: 730px;
 }
+
+.blog-post__title {
+	width: 630px;
+}

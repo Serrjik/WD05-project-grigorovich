@@ -34,7 +34,8 @@
 					</div>
 					<div class="post-add-form__textarea">
 						<label class="label">Содержание
-							<textarea class="textarea" type="text" placeholder="Введите описание" name="postText"><?=(trim(@$_POST['postText']) != '' ) ? $_POST['postText'] : '';?></textarea>
+							<textarea id="ckEditor" class="textarea" type="text" placeholder="Введите описание" name="postText"><?=(trim(@$_POST['postText']) != '' ) ? $_POST['postText'] : '';?></textarea>
+							<?php include_once ROOT . "templates/_parts/_ckEditorConnect.tpl" ?>
 						</label>
 					</div>
 					<div class="post-add-form-button">

@@ -7,7 +7,7 @@
 		<script src="<?=HOST?>templates/assets/js/check-lost-password-form.js"></script>
 	<?php endif ?>
 	<!-- Скрипт для отображения имени файла прикрепленной картинки -->
-	<?php if ( (@$_SERVER['REDIRECT_URL'] == '/profile-edit') || (@$_SERVER['REDIRECT_URL'] == '/blog/post-new') ): ?>
+	<?php if ( (@$_SERVER['REDIRECT_URL'] == '/profile-edit') || (@$_SERVER['REDIRECT_URL'] == '/blog/post-new') || (@$_SERVER['REDIRECT_URL'] == '/blog/post-edit') ): ?>
 		<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script>
 	<?php endif ?>
 	<!-- Скрипт для проверки поля ввода формы восстановления пароля -->
