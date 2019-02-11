@@ -1,5 +1,10 @@
 <?php
 
+if ( !isAdmin() ) {
+	header('Location: ' . HOST);
+	die();
+}
+
 $title = "Удалить пост";
 
 $post = R::load('posts', $_GET['id']);

@@ -4,7 +4,7 @@
 			<div class="col-10 offset-1">
 				<div class="title-1 post-add__title">Удалить пост в блоге</div>
 
-				<p>Вы действительно хотите удалить пост <strong><?=$post['title']?></strong> с id = <?=$post['id']?> ?</p>
+				<p>Вы действительно хотите удалить пост <strong><?=$post['title']?></strong><!--  с id = <?=$post['id']?>  -->?</p>
 
 				<!-- <?php require ROOT . 'templates/_parts/_errors.tpl'; ?> -->
 

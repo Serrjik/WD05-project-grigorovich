@@ -2,10 +2,12 @@
 	<div class="container user-content pt-70 make-relative">
 		<div class="row">
 			<div class="col-10 offset-1">
+			<?php if ( isAdmin() ) { ?>
 				<div class="blog__button--edit">
 					<a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" />Редактировать</a>
 					<a class="button button-delete" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>" />Удалить</a>
 				</div>
+			<?php } ?>
 				<div class="blog-post">
 					<div class="blog-post-heading-wrapper">
 						<h1 class="blog-post__title title-1"><?=$post['title']?></h1>

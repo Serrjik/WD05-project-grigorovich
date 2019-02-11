@@ -4,9 +4,9 @@
 			<div class="col-10 offset-1">
 				<div class="title-1 post-add__title">Удалить категорию</div>
 
-				<p>Вы действительно хотите удалить категорию <strong><?=$cat['cat_title']?></strong><!--  с id = <?=$cat['id']?> -->?</p>
+				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
-				<!-- <?php require ROOT . 'templates/_parts/_errors.tpl'; ?> -->
+				<p>Вы действительно хотите удалить категорию <strong><?=$cat['cat_title']?></strong>?</p>
 
 				<form class="post-add-form" action="<?=HOST?>blog/category-delete?id=<?=$cat['id']?>" method="POST">
 					<div class="post-add-form-button">

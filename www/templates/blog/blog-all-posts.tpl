@@ -6,8 +6,11 @@
 		} ?>
 
 		<div class="blog__header mb-50"><span>Блог веб-разработчика</span>
-			<a class="button button-edit" href="<?=HOST?>blog/post-new">Добавить пост</a>
+			<?php if ( isAdmin() ) { ?>
+				<a class="button button-edit" href="<?=HOST?>blog/post-new">Добавить пост</a>
+			<?php } ?>
 		</div>
+
 		<div class="row mb-40">
 
 			<?php foreach ($posts as $post): ?>

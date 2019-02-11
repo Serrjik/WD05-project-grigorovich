@@ -1,14 +1,28 @@
 <?php
 
+if ( !isAdmin() ) {
+	header('Location: ' . HOST);
+	die();
+}
+
 $title = "Удалить категорию";
 
 $cat = R::load('categories', $_GET['id']);
 
 if ( isset($_POST['catDelete']) ) {
 
-	R::trash($cat);
-	header('Location: ' . HOST . "blog/categories?result=catDeleted");
-	exit();
+	$posts = R::findOne( 'posts', ' cat = ? ', [$_GET['id']] );
+
+	if ( isset($posts->id) ) {
+		$errors[] = [
+			'title' => 'Категория не удалена!', 
+			'desc' => '<p>Вы пытаетесь удалить категорию, с которой связаны посты в блоге.</p>' 
+		];
+	} else {
+		R::trash($cat);
+		header('Location: ' . HOST . "blog/categories?result=catDeleted");
+		exit();
+	}
 
 }
 
