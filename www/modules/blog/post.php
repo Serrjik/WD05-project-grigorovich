@@ -4,7 +4,8 @@
 // If no beans match the criteria, this function will return NULL. 
 // $post  = R::findOne( 'posts', ' id = ? ', array($_GET['id']) );
 
-$sql = '
+// Запрос на данные о посте в блоге
+$sqlPost = '
 	SELECT posts.id, posts.title, posts.text, posts.author_id, posts.date_time, posts.post_img, posts.cat, posts.update_time, 
 	users.name, users.surname, 
 	categories.cat_title 
@@ -15,8 +16,18 @@ $sql = '
 	WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
 // Функция getAll() позволяет выполнять SQL-запрос и возвращает многомерный массив данных
-$post = R::getAll( $sql );
+$post = R::getAll( $sqlPost );
 $post = $post[0];
+
+// Запрос на комментарии о посте
+$sqlComments = 'SELECT 
+			comments.user_id, comments.text, comments.date_time, 
+			users.name, users.surname, users.avatar_small 
+		FROM comments 
+		INNER JOIN users ON comments.user_id = users.id
+		WHERE comments.post_id = ' . $_GET['id'] ;
+
+$comments = R::getAll( $sqlComments );
 
 $title = $post['title'];
 
@@ -33,8 +44,7 @@ if ( isset($_POST['addComment']) ) {
 		$comment->text = htmlentities($_POST['commentText']);
 		$comment->dateTime = R::isoDateTime();
 		R::store($comment);
-		header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);
-		exit();
+		$comments = R::getAll( $sqlComments );
 	}
 
 }
