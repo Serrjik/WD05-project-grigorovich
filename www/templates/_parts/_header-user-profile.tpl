@@ -2,7 +2,9 @@
 	<div class="user__avatar">
 		<div class="avatar">
 			<?php if ( $_SESSION['logged_user']['avatar_small'] != '' ) { ?>
-				<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" />
+				<img 
+					src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" 
+					alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['surname']?>" />
 			<?php }	?>
 		</div>
 	</div>

@@ -62,20 +62,48 @@
 						<div class="two-comments-container-block__message">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
 					</div>
 				</div>
+
+				<!-- Добавление комментария -->
 				<div class="comment mt-35 mb-120">
+
+					<div id="errorBox" class="registration-form__error">
+						<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
+					</div>
+
 					<div class="leave-comment-title">Оставить комментарий</div>
 					<div class="leave-comment">
 						<div class="leave-comment-avatar">
-							<div class="avatar"><img src="../img/avatars/avatar-1.jpg" /></div>
+							<div class="avatar">
+								<?php if ( $_SESSION['logged_user']['avatar_small'] != '' ) { ?>
+								<img 
+									src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" 
+									alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['surname']?>" />
+								<?php }	?>
+							</div>
 						</div>
-						<form class="leave-comment-form">
-							<div class="leave-comment-form__name">Юрий Ключевский</div>
-							<div class="notification__error">Комментарий не может быть пустым.</div>
-							<div class="mb-10"></div><textarea class="textarea" type="text" placeholder="Присоединиться к обсуждению..."></textarea>
-							<div class="mb-10"></div><input class="button" type="submit" value="Опубликовать" name="button" />
+
+						<form 
+							id="leaveCommentForm" 
+							class="leave-comment-form" 
+							method="POST" 
+							action="<?=HOST?>blog/post?id=<?=$post['id']?>" >
+							<div class="leave-comment-form__name">
+								<?=$_SESSION['logged_user']['name']?>
+								<?=$_SESSION['logged_user']['surname']?>
+							</div>
+							<div class="notification__error" style="display: none;">Комментарий не может быть пустым.</div>
+							<div class="mb-10">
+								<textarea id="comment" name="commentText" class="textarea" type="text" placeholder="Присоединиться к обсуждению..."></textarea>
+							</div>
+							<div class="mb-10">
+								<input class="button" type="submit" value="Опубликовать" name="addComment" />
+							</div>
 						</form>
+
 					</div>
 				</div>
+				<!-- // Добавление комментария -->
+
 			</div>
 		</div>
 	</div>
