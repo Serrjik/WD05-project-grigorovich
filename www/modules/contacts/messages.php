@@ -7,7 +7,7 @@ $title = "Контакты";
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-require ROOT . "templates/contacts/contacts.tpl";
+require ROOT . "templates/contacts/messages.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

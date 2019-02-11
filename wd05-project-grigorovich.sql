@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 11, 2019 at 10:17 PM
+-- Generation Time: Feb 12, 2019 at 12:02 AM
 -- Server version: 8.0.12
 -- PHP Version: 7.2.10
 
@@ -90,6 +90,16 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 (5, 39, 18, 'Экономно.', '2019-02-11 21:33:49'),
 (6, 39, 1, 'Бережливо.', '2019-02-11 21:58:53'),
 (7, 38, 23, 'Комментарий поста', '2019-02-11 22:13:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -182,6 +192,12 @@ ALTER TABLE `comments`
   ADD KEY `index_foreignkey_comments_user` (`user_id`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -215,6 +231,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`

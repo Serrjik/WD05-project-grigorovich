@@ -97,14 +97,24 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/categories/delete.php";
 		break;
 
+	// ::::::::::::::::::::: CONTACTS :::::::::::::::::::::
+
+	case 'contacts':
+		include "modules/contacts/index.php";
+		break;
+
+	case 'contacts-edit':
+		include "modules/contacts/edit.php";
+		break;
+
+	case 'messages':
+		include "modules/contacts/messages.php";
+		break;
+
 	// ::::::::::::
 
 	case 'about':
 		include "modules/about/index.php";
-		break;
-
-	case 'contacts':
-		include "modules/contacts/index.php";
 		break;
 
 	default:
