@@ -73,3 +73,7 @@ a.button {
 .blog-post__title {
 	width: 630px;
 }
+
+.contacts__value--bold-link {
+	display: block;
+}

@@ -1,11 +1,14 @@
 <div class="sticky-footer-content">
 	<div class="container user-content pt-80 pb-80">
-		<div class="row">
-			<div class="col contacts-links">
-				<div class="contacts-links__button"><a class="button button-edit" href="<?=HOST?>contacts-edit">Редактировать</a></div>
-				<div class="contacts-links__button"><a class="button" href="<?=HOST?>messages">Сообщения</a></div>
+		<?php if ( isAdmin() ): ?>
+			<div class="row">
+				<div class="col contacts-links">
+					<div class="contacts-links__button"><a class="button button-edit" href="<?=HOST?>contacts-edit">Редактировать</a></div>
+					<div class="contacts-links__button"><a class="button" href="<?=HOST?>messages">Сообщения</a></div>
+				</div>
 			</div>
-		</div>
+		<?php endif ?>
+
 		<div class="row">
 			<div class="col-md-6 contacts">
 				<div class="contacts__title">Контакты </div>
@@ -15,9 +18,8 @@
 					global $contacts;
 
 					if ( @$contacts[$name] != "" ) { ?>
-						
 						<div class="row">
-							<div class="col-4 contacts__name">$title</div>
+							<div class="col-4 contacts__name"><?=$title?></div>
 							<div class="col-6 contacts__value contacts__value--link">
 								<?php if ( $name == 'email' ): ?>
 									<a href="mailto:<?=$contacts[$name]?>" 
@@ -35,7 +37,7 @@
 										<?=$contacts[$name]?>
 									</a>
 								<?php elseif ( $name == 'github' ): ?>
-									<a href="<?=$contacts[$name]?>" 
+									<a class="contacts__value--bold-link" href="<?=$contacts[$name]?>" 
 										target="_blank" >
 										<?=$contacts[$name]?>
 									</a>
@@ -44,92 +46,46 @@
 								<?php endif ?>
 							</div>
 						</div>
-
 					<?php }
 
 				} ?>
 				<!-- // showContactItem() -->
 
-				<?php if ( $contacts['email'] != "" ): ?>
-					<div class="row">
-						<div class="col-4 contacts__name">Email</div>
-						<div class="col-6 contacts__value contacts__value--link">
-							<a href="mailto:<?=$contacts['email']?>" 
-								target="_blank" >
-								<?=$contacts['email']?>
-							</a>
-						</div>
-					</div>
-				<?php endif ?>
-				
-				<?php if ( $contacts['skype'] != "" ): ?>
-					<div class="row">
-						<div class="col-4 contacts__name">Skype</div>
-						<div class="col-6 contacts__value contacts__value--link">
-							<a class="contacts__value--link" href="#!"><?=$contacts['skype']?></a>
-						</div>
-					</div>
-				<?php endif ?>
-				
-				<?php if ( ($contacts['vkontakte'] != "") || ($contacts['facebook'] != "") || ($contacts['github'] != "") || ($contacts['github'] != "") ): ?>
-				<div class="row">
+				<?php showContactItem('name', 'Имя') ?>
+				<?php showContactItem('surname', 'Фамилия') ?>
+				<?php showContactItem('email', 'Email') ?>
+				<?php showContactItem('skype', 'Skype') ?>
+
+				<?php if ( ($contacts['vkontakte'] != "") || ($contacts['facebook'] != "") || ($contacts['twitter'] != "") ): ?>
+				<div class="row mb-15">
 					<div class="col-4 contacts__name">Социальные сети</div>
 					<div class="col-6 contacts__value">
 						<?php if ( $contacts['vkontakte'] != "" ): ?>
-							<div class="contacts__value--bold-link">
-								<a href="<?=$contacts['vkontakte']?>"
-									target="_blank" >
-									Профиль Вконтакте
-								</a>
-							</div>
+							<a class="contacts__value--bold-link" href="<?=$contacts['vkontakte']?>"
+								target="_blank" >
+								Профиль Вконтакте
+							</a>
 						<?php endif ?>
-						
 						<?php if ( $contacts['facebook'] != "" ): ?>
-							<div class="contacts__value--bold-link">
-								<a href="<?=$contacts['facebook']?>"
-									target="_blank" >
-									Профиль Фейсбук
-								</a>
-							</div>
+							<a class="contacts__value--bold-link" href="<?=$contacts['facebook']?>"
+								target="_blank" >
+								Профиль Фейсбук
+							</a>
 						<?php endif ?>
-
-						<?php if ( $contacts['github'] != "" ): ?>
-							<div class="contacts__value--bold-link">
-								<a href="<?=$contacts['github']?>"
-									target="_blank" >
-									Профиль GitHub
-								</a>
-							</div>
-						<?php endif ?>
-
 						<?php if ( $contacts['twitter'] != "" ): ?>
-							<div class="contacts__value--bold-link">
-								<a href="<?=$contacts['twitter']?>"
-									target="_blank" >
-									Профиль Твиттер
-								</a>
-							</div>
+							<a class="contacts__value--bold-link" href="<?=$contacts['twitter']?>"
+								target="_blank" >
+								Профиль Твиттер
+							</a>
 						<?php endif ?>
 					</div>
 				</div>
 				<?php endif ?>
 
-				<?php if ( $contacts['phone'] != "" ): ?>
-					<div class="row mt-15">
-						<div class="col-4 contacts__name">Телефон</div>
-						<div class="col-6 contacts__value mb-10">
-							<?=$contacts['phone']?>
-						</div>
-					</div>
-				<?php endif ?>
-				<?php if ( $contacts['address'] != "" ): ?>
-					<div class="row">
-						<div class="col-4 contacts__name">Адрес</div>
-						<div class="col-6 contacts__value">
-							<?=$contacts['address']?>
-						</div>
-					</div>
-				<?php endif ?>
+				<?php showContactItem('github', 'Профиль GitHub') ?>
+				<?php showContactItem('phone', 'Телефон') ?>
+				<?php showContactItem('address', 'Адрес') ?>
+
 			</div>
 
 			<div class="col-md-4">

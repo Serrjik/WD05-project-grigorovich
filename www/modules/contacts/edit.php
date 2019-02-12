@@ -1,5 +1,10 @@
 <?php
 
+if ( !isAdmin() ) {
+	header('Location: ' . HOST);
+	die();
+}
+
 $title = "Контакты";
 
 // $cats = R::find('categories', 'ORDER BY cat_title ASC');
@@ -8,8 +13,21 @@ $contacts = R::load('contacts', 1);
 
 if ( isset($_POST['contactsUpdate']) ) {
 
+	// email address matching pattern
+	$pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i';
+
+	if ( trim($_POST['name']) == '' ) {
+		$errors[] = ['title' => 'Введите Имя' ];
+	}
+
+	if ( trim($_POST['surname']) == '' ) {
+		$errors[] = ['title' => 'Введите Фамилию' ];
+	}
+
 	if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email' ];
+	} else if ( preg_match($pattern, $_POST['email']) !== 1 ) {
+		$errors[] = ['title' => 'Введенный Email некорректный' ];
 	}
 
 	if ( trim($_POST['phone']) == '' ) {

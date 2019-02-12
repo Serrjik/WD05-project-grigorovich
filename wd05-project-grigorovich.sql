@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 12, 2019 at 04:49 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.7
+-- Generation Time: Feb 12, 2019 at 11:23 PM
+-- Server version: 8.0.12
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `WD05-project-grigorovich`
+-- Database: `wd05-project-grigorovich`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `categories` (
   `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `cat_title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `comments` (
   `id` int(11) UNSIGNED NOT NULL,
   `post_id` int(11) UNSIGNED DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -116,7 +116,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `surname`, `skype`, `vkontakte`, `facebook`, `github`, `twitter`) VALUES
-(1, 'uac.sarge@gmail.com', '+(375) (29) 861-82-14', 'РБ, Минская обл., г. Березино', 'Сергей', 'Григорович', '', 'https://vk.com/uac_sarge', '', 'https://github.com/Serrjik', '');
+(1, 'uac.sarge@gmail.com', '+(375) (29) 861-82-14', 'РБ, Минская обл., г. Березино', 'Сергей', 'Григорович', 'sarge.kelly', 'https://vk.com/uac_sarge', 'has-no-profile', 'https://github.com/Serrjik', 'https://twitter.com/SargeUAC');
 
 -- --------------------------------------------------------
 
@@ -126,13 +126,13 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `surname`, `s
 
 CREATE TABLE `posts` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_520_ci,
+  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
-  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `cat` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img_small` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cat` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `update_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -237,31 +237,37 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

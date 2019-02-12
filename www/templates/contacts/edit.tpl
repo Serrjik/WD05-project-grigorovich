@@ -83,8 +83,14 @@
 							value="<?=dataFromPost("github");?>" />
 					</label>
 				</div>
-				<div class="col-md-3"><label class="label">Twitter
-					<input class="input-text" type="text" placeholder="Введите ссылку на профиль" name="twitter" /></label>
+				<div class="col-md-3">
+					<label class="label">Twitter
+						<input class="input-text" 
+							type="text" 
+							placeholder="Введите ссылку на профиль" 
+							name="twitter" 
+							value="<?=dataFromPost("twitter");?>" />
+					</label>
 				</div>
 			</div>
 			<div class="row contacts-edit-form__row">
