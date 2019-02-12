@@ -33,6 +33,9 @@ if ( isset($_POST['contactsUpdate']) ) {
 		$contacts->twitter = htmlentities(trim($_POST['twitter']));
 
 		R::store($contacts);
+
+		header('Location: ' . HOST . "contacts");
+		exit();
 	}
 
 }

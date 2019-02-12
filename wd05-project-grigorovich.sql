@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 12, 2019 at 12:02 AM
--- Server version: 8.0.12
--- PHP Version: 7.2.10
+-- Generation Time: Feb 12, 2019 at 04:49 PM
+-- Server version: 5.7.19
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wd05-project-grigorovich`
+-- Database: `WD05-project-grigorovich`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `categories` (
   `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `comments` (
   `id` int(11) UNSIGNED NOT NULL,
   `post_id` int(11) UNSIGNED DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
-  `text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -98,8 +98,25 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 --
 
 CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `name` varchar(191) DEFAULT NULL,
+  `surname` varchar(191) DEFAULT NULL,
+  `skype` varchar(191) DEFAULT NULL,
+  `vkontakte` varchar(191) DEFAULT NULL,
+  `facebook` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL,
+  `twitter` varchar(191) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `surname`, `skype`, `vkontakte`, `facebook`, `github`, `twitter`) VALUES
+(1, 'uac.sarge@gmail.com', '+(375) (29) 861-82-14', 'РБ, Минская обл., г. Березино', 'Сергей', 'Григорович', '', 'https://vk.com/uac_sarge', '', 'https://github.com/Serrjik', '');
 
 -- --------------------------------------------------------
 
@@ -109,13 +126,13 @@ CREATE TABLE `contacts` (
 
 CREATE TABLE `posts` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text COLLATE utf8mb4_unicode_520_ci,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
-  `post_img` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img_small` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `cat` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cat` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `update_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -132,7 +149,8 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 (35, 'Хватит тащить хайповые технологии в продакшен', 'Очевидно, что сам по себе код мало кому нужен. Это всего лишь способ решения определённых задач. Бизнес-задач, если говорить конкретнее. А значит, выбор стека технологий должен быть целесообразным.\r\n3 комментария\r\nВ закладки\r\n\r\nНе по принципу \"вау, это супер новая библиотека от Google/Facebook/Apple/etc, давайте её заюзаем\".\r\n\r\nА в зависимости от того, насколько выгодно будет его использовать. Ведь конечному пользователю глубоко наплевать, на чём написано приложение. Почему же тогда программистов порой уносит и они начинают заниматься откровенной ерундой?\r\n\r\nНапример, из последнего. Хотят сделать MVP мобильного приложения. Сроки сжатые - около недели. Для фронта был выбран flutter. Людей, которые с ним работали, нет. Но использовать нужно именно flutter. Главный вопрос - ЗАЧЕМ???\r\n\r\nЗачем выбирать фреймворк, которым владеют 1.5 человека в мире?? Допустим, технология на 100% надёжная и у неё нет скрытых багов. ОК. Но как много специалистов, которые ей реально владеют? Как много крупных компаний её использовали? Как много best practices и способов решения самых популярных проблем?\r\n\r\nОчевидно, что не очень.\r\n\r\nА для нас важно, сделать MVP в максимально короткие сроки. И будет здорово, если ты пишешь на известной и предсказуемой технологии. К твоим услугам будет куча готовых библиотек, шаблонов и описанных вариантов того, как сделать какую-нибудь фичу. А в трудной ситуации тебе не придётся тратить часы, чтобы пофиксить пустяковую ошибку.\r\n\r\nИ нет, разговор не о том, что один инструмент хороший, а другой - плохой. У всего есть своя зона применения. Для разработки нужно выбирать то, что будет выгодно использовать. Тот фреймворк/язык/библиотеку, на которой фичи будут создаваться быстрее. Надёжность и предсказуемость выше. А количество самописных велосипедов меньше.\r\n\r\nХайповые вещи лучше оставить для личных разработок. И только после того как \"супер новая прогрессивная технология\" освоена и протестирована, её можно использовать в реальных проектах.', 1, '2019-02-08 23:04:57', '563501528504.jpg', '320-563501528504.jpg', '3', NULL),
 (38, 'пост 2', 'Отредактированный текст поста 2', 1, '2019-02-09 22:09:18', '610606665162.jpg', '320-610606665162.jpg', '4', '2019-02-09 23:58:42'),
 (39, 'Украинские подростки создали &laquo;вечные&raquo; блокноты и карандаши nuka', '<p>Украинские маркетологи устали от блокнотов, которые заканчиваются, и создали &laquo;вечный&raquo;.</p>\r\n\r\n<p>Страницы <strong>nuka</strong> &mdash; из синтетической бумаги, которая не рвётся, не мнётся, не боится воды &mdash; а записи можно стереть специальными растворителем.</p>\r\n\r\n<p>Также они самостоятельно придумали свой сплав и разработали &laquo;вечный&raquo; металлический карандаш, который пишет благодаря окислительной реакции. Сейчас они готовятся запустить кампанию на Kickstarter &mdash; цена набора составит $59.</p>\r\n\r\n<p>В 2018 году команда попала в акселератор для hardware-проектов &mdash; Product Idea Accelerator от студии Concepter. Проект оценили в $1 млн и а также представили свой продукт на выставке CES.<br />\r\nСейчас предприниматели готовится запустить производство.</p>', 1, '2019-02-09 23:32:36', '149364199009.png', '320-149364199009.png', '20', '2019-02-10 22:41:02'),
-(41, 'Mail.Ru Group выпустила &laquo;безопасный&raquo; браузер Atom', '<p><strong>Mail.Ru Group</strong> представила бета-версию своего нового <a href=\"https://browser.ru/#main\" rel=\"nofollow noopener\" target=\"_blank\">браузера</a> <strong>Atom </strong>для Windows. Он похож на &laquo;Яндекс.Браузер&raquo; и позволяет открыть вкладку инкогнито в один клик.</p>\r\n\r\n<p>Компания позиционирует Atom как безопасный и приватный браузер. В нём есть специальная панель, с помощью которой пользователь может проверить, какие разрешение на обработку своих данных он выдал сайту.</p>\r\n\r\n<blockquote>\r\n<p>&laquo;Основной упор в первой версии браузера сделан на то, что мы называем &laquo;управляемой безопасностью&raquo;. Мы хотим, чтобы пользователь чётко понимал и принимал риски своей работы в сети&raquo;,</p>\r\n</blockquote>\r\n\r\n<p>&mdash; сообщили vc.ru в пресс-службе Mail.Ru Group.</p>', 1, '2019-02-10 22:33:44', '497786400346.png', '320-497786400346.png', '5', NULL);
+(41, 'Mail.Ru Group выпустила &laquo;безопасный&raquo; браузер Atom', '<p><strong>Mail.Ru Group</strong> представила бета-версию своего нового <a href=\"https://browser.ru/#main\" rel=\"nofollow noopener\" target=\"_blank\">браузера</a> <strong>Atom </strong>для Windows. Он похож на &laquo;Яндекс.Браузер&raquo; и позволяет открыть вкладку инкогнито в один клик.</p>\r\n\r\n<p>Компания позиционирует Atom как безопасный и приватный браузер. В нём есть специальная панель, с помощью которой пользователь может проверить, какие разрешение на обработку своих данных он выдал сайту.</p>\r\n\r\n<blockquote>\r\n<p>&laquo;Основной упор в первой версии браузера сделан на то, что мы называем &laquo;управляемой безопасностью&raquo;. Мы хотим, чтобы пользователь чётко понимал и принимал риски своей работы в сети&raquo;,</p>\r\n</blockquote>\r\n\r\n<p>&mdash; сообщили vc.ru в пресс-службе Mail.Ru Group.</p>', 1, '2019-02-10 22:33:44', '497786400346.png', '320-497786400346.png', '5', NULL),
+(44, 'Новый пост 2', '<p>ываыва</p>', 1, '2019-02-12 11:52:13', '121043616576.jpg', '320-121043616576.jpg', '5', NULL);
 
 -- --------------------------------------------------------
 
@@ -219,37 +237,31 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
