@@ -77,3 +77,7 @@ a.button {
 .contacts__value--bold-link {
 	display: block;
 }
+
+.delete {
+	z-index: 2;
+}

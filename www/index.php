@@ -111,6 +111,10 @@ switch ( $uri[0] ) {
 		include "modules/contacts/messages.php";
 		break;
 
+	case 'message-delete':
+		include "modules/contacts/delete.php";
+		break;
+
 	// ::::::::::::
 
 	case 'about':

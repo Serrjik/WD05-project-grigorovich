@@ -1,5 +1,6 @@
 <div class="sticky-footer-content">
 	<div class="container user-content pt-80 pb-80">
+
 		<?php if ( isAdmin() ): ?>
 			<div class="row">
 				<div class="col contacts-links">
@@ -89,21 +90,51 @@
 			</div>
 
 			<div class="col-md-4">
-				<form class="form-contact">
+
+				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
+				<?php require ROOT . 'templates/_parts/_success.tpl'; ?>
+
+				<form class="form-contact" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data" novalidate >
 					<div class="form-contact__title">Связаться со мной</div>
-					<div class="form-contact__name"><input class="input-text" type="text" placeholder="Введите имя" /></div>
-					<div class="form-contact__email"><input class="input-text" type="text" placeholder="Email" /></div>
-					<div class="form-contact__message"><textarea class="textarea" type="text" placeholder="Сообщение"></textarea></div>
+					<div class="form-contact__name">
+						<input name="name" 
+							class="input-text" 
+							type="text" 
+							placeholder="Введите имя" />
+					</div>
+					<div class="form-contact__email">
+						<input name="email" 
+							class="input-text" 
+							type="email" 
+							placeholder="Email" />
+					</div>
+					<div class="form-contact__message">
+						<textarea name="message" 
+							class="textarea" 
+							type="text" 
+							placeholder="Сообщение"></textarea>
+					</div>
 					<div class="form-contact__load-file">
 						<div class="load-file-title">Прикрепить файл </div>
 						<div class="load-file-opis">jpg, png, pdf, doc, весом до 2Мб.</div>
-						<div class="load-file-fieldset"><input class="inputfile inputfile-rad" id="file" type="file" name="file" data-multiple-caption="{count} файлов выбрано" multiple="" /><label for="file">Выбрать файл</label><span>Файл не выбран</span></div>
+						<div class="load-file-fieldset">
+							<input class="inputfile inputfile-rad" 
+								id="file" 
+								type="file" 
+								name="file" 
+								data-multiple-caption="{count} файлов выбрано" 
+								multiple="" />
+							<label for="file">Выбрать файл</label><span>Файл не выбран</span></div>
 					</div>
-					<div class="form-contact__save"><input class="button button-save" type="submit" value="Отправить" name="name" /></div>
+					<div class="form-contact__save">
+						<input class="button button-save" 
+							type="submit" 
+							value="Отправить" 
+							name="newMessage" />
+					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="map" id="map"></div>
-<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script>
