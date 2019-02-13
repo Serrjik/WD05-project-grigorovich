@@ -91,8 +91,12 @@
 
 			<div class="col-md-4">
 
+				<!-- Вывод ошибок и успехов -->
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
-				<?php require ROOT . 'templates/_parts/_success.tpl'; ?>
+				<?php if ( isset($_GET['result']) ) {
+					include ROOT . "templates/contacts/_results.tpl";
+				} ?>
+				<!-- // Вывод ошибок и успехов -->
 
 				<form class="form-contact" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data" novalidate >
 					<div class="form-contact__title">Связаться со мной</div>
@@ -100,23 +104,25 @@
 						<input name="name" 
 							class="input-text" 
 							type="text" 
-							placeholder="Введите имя" />
+							placeholder="Введите имя"
+							value="<?=(trim(@$_POST['name']) != '' ) ? $_POST['name'] : '';?>" />
 					</div>
 					<div class="form-contact__email">
 						<input name="email" 
 							class="input-text" 
 							type="email" 
-							placeholder="Email" />
+							placeholder="Email" 
+							value="<?=(trim(@$_POST['email']) != '' ) ? $_POST['email'] : '';?>" />
 					</div>
 					<div class="form-contact__message">
 						<textarea name="message" 
 							class="textarea" 
 							type="text" 
-							placeholder="Сообщение"></textarea>
+							placeholder="Сообщение"><?=(trim(@$_POST['message']) != '' ) ? $_POST['message'] : '';?></textarea>
 					</div>
 					<div class="form-contact__load-file">
 						<div class="load-file-title">Прикрепить файл </div>
-						<div class="load-file-opis">jpg, png, pdf, doc, весом до 2Мб.</div>
+						<div class="load-file-opis">jpg, png, pdf, doc, docx весом до 2Мб.</div>
 						<div class="load-file-fieldset">
 							<input class="inputfile inputfile-rad" 
 								id="file" 

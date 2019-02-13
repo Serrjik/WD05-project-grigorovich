@@ -5,30 +5,31 @@ if ( !isAdmin() ) {
 	die();
 }
 
-$title = "Удалить пост";
+$title = "Удалить сообщение";
 
-$post = R::load('posts', $_GET['id']);
+$message = R::load('messages', $_GET['id']);
 
-if ( isset($_POST['postDelete']) ) {
+// echo "<pre>";
+// print_r($message);
+// echo "</pre>";
+// die();
 
-	$postImgFolderLocation = ROOT . 'usercontent/blog/'; // usercontent/blog/9989234798.jpg
+if ( isset($_POST['messageDelete']) ) {
 
-	// Если картинка в блоге установлена, то удаляем её файл
-	$postImg = $post->post_img;
-	if ( $postImg != '' ) {
-		$picurl = $postImgFolderLocation . $postImg; // usercontent/blog/foto.jpg
-		$picurl320 = $postImgFolderLocation . "320-" . $postImg; // usercontent/blog/320-foto.jpg
-		// Удаляем картинку блога с помощью функции unlink()
-		if ( file_exists($picurl) ) {
-			unlink($picurl);
-		}
-		if ( file_exists($picurl320) ) {
-			unlink($picurl320);
+	$postImgFolderLocation = ROOT . 'usercontent/upload_files/'; // usercontent/upload_files/file.docx
+
+	// Если к сообщению прикреплен файл, то удаляем его
+	$messageFile = $message->message_file;
+	if ( $messageFile != '' ) {
+		$fileURL = $postImgFolderLocation . $messageFile; // usercontent/upload_files/file.docx
+		// Удаляем файл с помощью функции unlink()
+		if ( file_exists($fileURL) ) {
+			unlink($fileURL);
 		}
 	}
 
-	R::trash($post);
-	header('Location: ' . HOST . "blog?result=postDeleted");
+	R::trash($message);
+	header('Location: ' . HOST . "messages?result=messageDeleted");
 	exit();
 
 }
@@ -36,7 +37,7 @@ if ( isset($_POST['postDelete']) ) {
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-require ROOT . "templates/blog/message-delete.tpl";
+require ROOT . "templates/contacts/message-delete.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

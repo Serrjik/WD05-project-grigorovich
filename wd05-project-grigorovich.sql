@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 13, 2019 at 04:50 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.7
+-- Generation Time: Feb 13, 2019 at 10:16 PM
+-- Server version: 8.0.12
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `WD05-project-grigorovich`
+-- Database: `wd05-project-grigorovich`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `categories` (
   `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `cat_title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `comments` (
   `id` int(11) UNSIGNED NOT NULL,
   `post_id` int(11) UNSIGNED DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -126,11 +126,11 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `surname`, `s
 
 CREATE TABLE `messages` (
   `id` int(11) UNSIGNED NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_file_name_original` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file_name_original` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -139,10 +139,9 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_original`, `message_file`, `date_time`) VALUES
-(12, 'info4@uac.com', 'Сергей', 'Privet', '828_06.docx', '184155640689.docx', '2019-01-08 03:34:37'),
-(19, 'info3@uac.com', 'Сергей', 'Привет', 'огнетушитель.png', '651087105499.png', '2019-02-04 09:31:28'),
-(20, 'info4@uac.com', 'Сергей', 'Nice job', '', '', '2019-02-12 14:19:28'),
-(23, 'info4@uac.com', 'Сергей', 'Hi guys', '4216801 березино црб скан штрихкодов сч.pdf', '509148809675.pdf', '2019-02-13 14:19:28');
+(27, 'foo@uac.com', 'Роман', 'Предложение', '27_vipusk.pdf', '559959857993.pdf', '2019-02-13 22:00:14'),
+(28, 'foo@tut.by', 'Егор', 'Отзыв', 'Как улучшить зрение 9 упражнений.docx', '791869768939.docx', '2019-02-13 22:05:41'),
+(29, 'mail@mail.ru', 'Дельгардо', 'Priva', 'Что позволяет себе этот RedBean.png', '159212819300.png', '2019-02-13 22:08:25');
 
 -- --------------------------------------------------------
 
@@ -152,13 +151,13 @@ INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_ori
 
 CREATE TABLE `posts` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_520_ci,
+  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
-  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `cat` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img_small` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cat` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `update_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -269,36 +268,43 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,15 +1,3 @@
-<?php 
-
-// echo "<pre>";
-// print_r($post);
-// echo "</pre>";
-
-// echo "<pre>";
-// print_r($cats);
-// echo "</pre>";
-
- ?>
-
 <div class="sticky-footer-content">
 	<div class="container user-content pt-80 pb-120">
 		<div class="row">
