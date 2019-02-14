@@ -1,4 +1,4 @@
-<div class="bg-technology">
+<div id="skills" class="bg-technology">
 	<div class="container user-content">
 		<div class="technology">
 			<div class="row">

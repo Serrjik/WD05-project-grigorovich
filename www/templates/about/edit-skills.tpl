@@ -1,10 +1,16 @@
-<?php function skillItem($name, $title) { ?>
+<?php function skillItem($name, $title) {
+	global $skills; ?>
 	<div class="col-md-3 technology-edit-form__item">
 		<label class="label"><?=$title?>
 			<input class="input-text input-text--width" 
-				type="text" 
+				type="number" 
+				min="0" 
+				max="100" 
 				placeholder="0" 
-				name="<?=$name?>" />
+				name="<?=$name?>"
+				value="<?=$skills[$name]?>" 
+				data-skill />
+				<span class="validity"></span>
 		</label>
 		<div class="percent-sign"><span class="percent-sign__item">%</span></div>
 	</div>
@@ -15,10 +21,12 @@
 		<div class="row">
 			<div class="offset-md-1 col-md-8">
 				<h1 class="title-1">Редактировать - Технологии</h1>
+
+				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
+
 				<form class="technology-edit-form" 
 					action="edit-skills" 
 					method="POST" >
-
 
 					<div class="row technology-edit-form__row">
 						<?=skillItem('html', 'HTML5');?>
@@ -28,30 +36,29 @@
 					</div>
 
 					<div class="row technology-edit-form__row">
-						<div class="col-md-3 technology-edit-form__item"><label class="label">PHP<input class="input-text input-text--width" type="text" placeholder="0" name="php" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
-						<div class="col-md-3 technology-edit-form__item"><label class="label">MySql<input class="input-text input-text--width" type="text" placeholder="0" name="mysql" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
+						<?=skillItem('php', 'PHP');?>
+						<?=skillItem('mysql', 'MySql');?>
 					</div>
+
 					<div class="row technology-edit-form__row mb-30">
-						<div class="col-md-3 technology-edit-form__item"><label class="label">Git<input class="input-text input-text--width" type="text" placeholder="0" name="git" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
-						<div class="col-md-3 technology-edit-form__item"><label class="label">Gulp<input class="input-text input-text--width" type="text" placeholder="0" name="gulp" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
-						<div class="col-md-3 technology-edit-form__item"><label class="label">Bower<input class="input-text input-text--width" type="text" placeholder="0" name="bower" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
-						<div class="col-md-3 technology-edit-form__item"><label class="label">WebPack<input class="input-text input-text--width" type="text" placeholder="0" name="webpack" /></label>
-							<div class="percent-sign"><span class="percent-sign__item">%</span></div>
-						</div>
+						<?=skillItem('git', 'Git');?>
+						<?=skillItem('gulp', 'Gulp');?>
+						<?=skillItem('npm', 'NPM');?>
+						<?=skillItem('webpack', 'WebPack');?>
 					</div>
+
 					<div class="row technology-edit-form__row">
-						<div class="technology-edit-form__button"><input class="button button-save" type="submit" value="Сохранить" name="technology-edit" /></div>
-						<div class="technology-edit-form__button-cancel"><button class="button" type="reset">Отмена</button></div>
+						<div class="technology-edit-form__button">
+							<input class="button button-save" 
+								type="submit" 
+								value="Сохранить" 
+								name="skillsUpdate" />
+						</div>
+						<div class="technology-edit-form__button-cancel">
+							<a class="button" 
+								href="<?=HOST?>about#skills">
+							Отмена</a>
+						</div>
 					</div>
 				</form>
 			</div>

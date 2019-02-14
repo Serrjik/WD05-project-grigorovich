@@ -1,4 +1,4 @@
-<div class="container user-content pt-80 pb-55">
+<div id="about" class="container user-content pt-80 pb-55">
 	<div class="row">
 		<div class="col-md-3">
 			<?php if ( $about->photo != '' ): ?>

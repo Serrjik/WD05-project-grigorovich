@@ -86,3 +86,19 @@ a.button {
 .delete {
 	z-index: 2;
 }
+
+input[data-skill][type="number"]:invalid+span:after {
+	content: '✖';
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	cursor: auto;
+}
+
+input[data-skill][type="number"]:valid+span:after {
+	content: '✓';
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	cursor: auto;
+}

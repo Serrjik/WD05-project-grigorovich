@@ -85,7 +85,7 @@ if ( isset($_POST['textUpdate']) ) {
 		$about->description = trim($_POST['description']);
 
 		R::store($about);
-		header('Location: ' . HOST . "about");
+		header('Location: ' . HOST . "about#about");
 		exit();
 
 	}
