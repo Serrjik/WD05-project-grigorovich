@@ -1,11 +1,9 @@
 <?php
-
 	// Функция выводит значения для полей ввода из массива POST, если он установлен. Иначе выводит значения полей из таблицы contacts в БД
 	function dataFromPost($fieldName) {
 		global $contacts;
 		echo (@$_POST[$fieldName] != '') ? $_POST[$fieldName] : $contacts[$fieldName];
 	}
-
 ?>
 
 <div class="sticky-footer-content">

@@ -2,6 +2,8 @@
 
 $title = "Обо мне";
 
+$about = R::load('about', 1);
+
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';

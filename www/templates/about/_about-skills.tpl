@@ -5,7 +5,11 @@
 				<div class="col-md-9 offset-md-3">
 					<div class="technology-block">
 						<div class="technology-block__title">Технологии<span>Которые использую в работе</span></div>
-						<div class="technology-block__button"><a class="button button-edit" href="<?=HOST?>edit-skills">Редактировать</a></div>
+
+						<?php if ( isAdmin() ) { ?>
+							<div class="technology-block__button"><a class="button button-edit" href="<?=HOST?>edit-skills">Редактировать</a></div>
+						<?php } ?>
+
 					</div>
 				</div>
 			</div>

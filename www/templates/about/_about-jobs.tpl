@@ -4,7 +4,11 @@
 			<div class="work-experience">
 				<div class="work-experience-block">
 					<div class="work-experience-block__title">Опыт работы</div>
-					<div class="work-experience-block__button"><a class="button button-edit" href="<?=HOST?>edit-jobs">Редактировать</a></div>
+
+					<?php if ( isAdmin() ) { ?>
+						<div class="work-experience-block__button"><a class="button button-edit" href="<?=HOST?>edit-jobs">Редактировать</a></div>
+					<?php } ?>
+
 				</div>
 				<div class="work-experience__date">февраль 2017 — по настоящее время</div>
 				<div class="work-experience__title">Frontend разработчик, Вконтактe, mail.ru group</div>
