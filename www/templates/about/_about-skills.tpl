@@ -16,7 +16,8 @@
 			<div class="row mb-40">
 				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Frontend</div>
 				<div class="col-md-9">
-					<div class="indicator"><svg class="svg-box" viewbox="0 0 125 125">
+					<div class="indicator">
+						<svg class="svg-box" viewbox="0 0 125 125">
 							<circle class="circle circle-green" style="stroke-dashoffset:35.18;"> </circle>
 						</svg>
 						<div class="indicator__value">HTML5</div>

@@ -25,7 +25,7 @@
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
 				<form class="technology-edit-form" 
-					action="edit-skills" 
+					action="<?=HOST?>edit-skills" 
 					method="POST" >
 
 					<div class="row technology-edit-form__row">
