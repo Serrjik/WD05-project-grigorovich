@@ -133,6 +133,14 @@ switch ( $uri[0] ) {
 		include "modules/about/edit-jobs.php";
 		break;
 
+	case 'job-delete':
+		include ROOT . "modules/about/job-delete.php";
+		break;
+
+	case 'job-edit':
+		include ROOT . "modules/about/job-edit.php";
+		break;
+
 	// ::::::::::::
 
 	default:

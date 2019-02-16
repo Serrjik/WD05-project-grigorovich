@@ -70,7 +70,12 @@
 								value="Сохранить" 
 								name="textUpdate" />
 						</div>
-						<div class="form-button-cancel"><button class="button" type="reset">Отмена</button></div>
+						<div class="form-button-cancel">
+							<a class="button" 
+								href="<?=HOST?>about#about" >
+								Отмена
+							</a>
+						</div>
 					</div>
 				</form>
 			</div>
