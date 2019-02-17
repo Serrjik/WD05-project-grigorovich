@@ -79,6 +79,28 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/blog/post.php";
 		break;
 
+		// ::::::::::::::::::::: PORTFOLIO :::::::::::::::::::::
+
+		case 'portfolio':
+			include ROOT . "modules/portfolio/index.php";
+			break;
+
+		case 'portfolio/work-new':
+			include ROOT . "modules/portfolio/work-new.php";
+			break;
+
+		case 'portfolio/work-edit':
+			include ROOT . "modules/portfolio/work-edit.php";
+			break;
+
+		// case 'portfolio/work-delete':
+		// 	include ROOT . "modules/portfolio/work-delete.php";
+		// 	break;
+
+		case 'portfolio/work':
+			include ROOT . "modules/portfolio/work.php";
+			break;
+
 	// ::::::::::::::::::::: CATEGORIES :::::::::::::::::::::
 
 	case 'blog/categories':
@@ -141,7 +163,7 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/about/job-edit.php";
 		break;
 
-	// ::::::::::::
+	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::
 
 	default:
 		include "modules/main/index.php";

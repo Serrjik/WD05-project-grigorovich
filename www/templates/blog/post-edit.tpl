@@ -6,7 +6,10 @@
 
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
-				<form class="post-add-form" action="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" method="POST" enctype="multipart/form-data">
+				<form class="post-add-form" 
+					action="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" 
+					method="POST" 
+					enctype="multipart/form-data">
 					<div class="post-add-form__name">
 						<label class="label">Название
 							<input class="input-text" type="text" value="<?=$post['title']?>" name="postTitle" placeholder="Введите название" />

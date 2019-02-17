@@ -1,6 +1,11 @@
 html,
 body {
-	min-height: 100vh;
+	height: 100%;
+}
+
+body::before {
+	content: ;
+	display: none;
 }
 
 .notification__success,
@@ -58,12 +63,14 @@ a.button {
 	text-decoration: none;
 }
 
-.card-post {
+.card-post,
+.card-portfolio {
 	margin-bottom: 50px;
 	margin-right: 30px;
 }
 
-.card-post:nth-child(3n+3) {
+.card-post:nth-child(3n+3),
+.card-portfolio:nth-child(3n+3) {
 	margin-right: 0;
 }
 
@@ -101,4 +108,12 @@ input[data-skill][type="number"]:valid+span:after {
 	top: 40px;
 	left: 0px;
 	cursor: auto;
+}
+
+.logo-wrapper {
+	height: auto;
+}
+
+.footer {
+	padding-bottom: 60px;
 }

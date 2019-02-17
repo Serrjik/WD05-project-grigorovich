@@ -3,9 +3,6 @@
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
 				<div class="title-1">Сообщения от посетителей</div>
-<!-- <pre>
-<?=print_r($messages, true)?>
-</pre> -->
 
 				<?php foreach ($messages as $message) {
 					require ROOT . "templates/contacts/message-card.tpl";
