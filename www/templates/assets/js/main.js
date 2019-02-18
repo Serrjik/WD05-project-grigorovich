@@ -18,11 +18,11 @@ $(document).ready(function() {
 
 function initMap() {
 
-	var zelenograd = {lat: 55.987364, lng: 37.195591};
+	var berezino = {lat: 53.839100, lng: 28.987900};
 
 	myMap = new google.maps.Map(document.getElementById('map'), {
 
-		center: zelenograd,
+		center: berezino,
 		zoom: 13,
 		styles: [
 		    {
@@ -108,15 +108,15 @@ function initMap() {
 
 	//Markers
 
-	var markerZelenograd = new google.maps.Marker({
+	var markerBerezino = new google.maps.Marker({
 
-		position: zelenograd,
+		position: berezino,
 
 		map: myMap,
 
-		title: 'Зеленоград',
+		title: 'Березино',
 
-		icon: '../img/map-icon/location-icon.png'
+		icon: '/templates/assets/img/map-icon/location-icon.png'
 
 	});
 }
