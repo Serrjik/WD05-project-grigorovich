@@ -29,28 +29,23 @@
 						<?=$currentUser->city?></div>
 					</div>
 				</div>
+
+				<!-- Комментарии пользователя -->
 				<h2 class="title-2">Комментарии пользователя</h2>
-				<div class="user-comment mb-10">
-					<div class="user-comment-wrap">
-						<div class="user-comment-wrap__title"> <a class="user-comment-wrap__link" href="#!" target="_blanck">Поездка в LA</a></div>
-						<div class="user-comment-wrap__date"><i class="far fa-clock user-comment-wrap__icon"></i>05 Мая 2017 года в 15:45</div>
+
+				<?php if ( count($comments) > 0 ): ?>
+				 	<?php foreach ($comments as $comment): ?>
+				 		<?php include ROOT . "templates/profile/_comment-card.tpl" ?>
+				 	<?php endforeach ?>
+				<?php else: ?>
+					<div class="user-comment mb-10">
+						<div class="user-comment__content">
+							<p>Вы пока не оставляли комментарии на сайте.</p>
+						</div>
 					</div>
-					<div class="user-comment__content">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
-				</div>
-				<div class="user-comment mb-10">
-					<div class="user-comment-wrap">
-						<div class="user-comment-wrap__title"> <a class="user-comment-wrap__link" href="#!" target="_blanck">Ноутбук для веб-разработчика</a></div>
-						<div class="user-comment-wrap__date"><i class="far fa-clock user-comment-wrap__icon"></i>15 Мая 2017 года в 10:02</div>
-					</div>
-					<div class="user-comment__content">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
-				</div>
-				<div class="user-comment">
-					<div class="user-comment-wrap">
-						<div class="user-comment-wrap__title"> <a class="user-comment-wrap__link" href="#!" target="_blanck">Настройка Sublime</a></div>
-						<div class="user-comment-wrap__date"><i class="far fa-clock user-comment-wrap__icon"></i>12 Мая 2017 года в 20:39</div>
-					</div>
-					<div class="user-comment__content">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
-				</div>
+				<?php endif ?>
+				<!-- // Комментарии пользователя -->
+
 			</div>
 		</div>
 	</div>

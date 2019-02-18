@@ -39,7 +39,6 @@ foreach ($postsId as $index => $id) {
 	}
 }
 
-
 $title = $post['title'];
 
 if ( isset($_POST['addComment']) ) {
