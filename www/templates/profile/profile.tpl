@@ -21,12 +21,15 @@
 						<div class="profile-user-description__title"><?=$currentUser->name?> <?=$currentUser->surname?></div>
 						<span>Email</span>
 						<div class="profile-user-description__email"><?=$currentUser->email?></div>
+						
+						<?php if ( ($currentUser->country != '') || ($currentUser->city != '') ): ?>
 						<span>Страна, Город</span>
-						<div class="profile-user-description__city"><?=$currentUser->country?>
-						<?php if ( ($currentUser->country != '') && ($currentUser->city != '') ): ?>
-						, 
+						<div class="profile-user-description__city">
+							<?=$currentUser->country?>
+								<?=(($currentUser->country != '') && ($currentUser->city != '')) ? ', ' :''?>
+							<?=$currentUser->city?>
+						</div>
 						<?php endif ?>
-						<?=$currentUser->city?></div>
 					</div>
 				</div>
 
