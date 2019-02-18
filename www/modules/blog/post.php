@@ -29,6 +29,17 @@ $sqlComments = 'SELECT
 
 $comments = R::getAll( $sqlComments );
 
+// Метод getCol() получает значения из таблицы только по 1 колонке
+$postsId = R::getCol('SELECT id FROM posts');
+foreach ($postsId as $index => $id) {
+	if ( $id == $post['id'] ) {
+		@$nextId = $postsId[$index + 1];
+		@$prevId = $postsId[$index - 1];
+		break;
+	}
+}
+
+
 $title = $post['title'];
 
 if ( isset($_POST['addComment']) ) {

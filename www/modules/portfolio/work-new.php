@@ -23,6 +23,10 @@ if ( isset($_POST['workNew']) ) {
 		$errors[] = ['title' => 'Введите технологии, использованные в работе' ];
 	}
 
+	if ( trim($_POST['link']) == '' ) {
+		$errors[] = ['title' => 'Введите ссылку на проект' ];
+	}
+
 	if ( ($_FILES['workImage']['name'] == '') && ($_FILES['workImage']['tmp_name'] == '') ) {
 		$errors[] = ['title' => 'Прикрепите изображение работы' ];
 	}

@@ -5,6 +5,16 @@
 $work  = R::findOne( 'works', ' id = ? ', array($_GET['id']) );
 $author = R::findOne( 'about', 1);
 
+// Метод getCol() получает значения из таблицы только по 1 колонке
+$worksId = R::getCol('SELECT id FROM works');
+foreach ($worksId as $index => $id) {
+	if ( $id == $work['id'] ) {
+		@$nextId = $worksId[$index + 1];
+		@$prevId = $worksId[$index - 1];
+		break;
+	}
+}
+
 $title = $work['title'];
 
 // Готовим контент для центральной части

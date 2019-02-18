@@ -14,10 +14,14 @@
 		<?php } ?>
 	</div>
 
-	<div class="row mb-50">
+	<div class="row">
 		<?php foreach ($works as $work): ?>
 			<!-- Карточка работы -->
 			<?php require ROOT . "templates/_parts/_portfolio-card.tpl" ?>
 		<?php endforeach ?>
+	</div>
+
+	<div class="row mb-50">
+		<?php require ROOT . "templates/_parts/_pagination.tpl" ?>
 	</div>
 </div>

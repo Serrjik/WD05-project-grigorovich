@@ -124,4 +124,36 @@ function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8' ) {
 
 }
 
+// Пагинация
+// Функция pagination(количество_результатов_на_страницу, из_какой_таблицы)
+// Возвращает массив из 3-х переменных
+function pagination($results_per_page, $type){
+	$number_of_results = R::count($type);
+
+	// Определяем количество страниц для отображения всех записей
+	// Функция ceil() возвращает следующее наибольшее целочисленное значение, округляя значение в случае необходимости.
+	$number_of_pages = ceil($number_of_results / $results_per_page);
+
+	// Определить на какой странице сейчас пользователь
+	if ( !isset($_GET['page']) ) {
+		$page_number = 1;
+	} else {
+		$page_number = $_GET['page'];
+	}
+
+	// Определяем sql LIMIT - начальное число для отображения результатов на каждой странице
+	$starting_limit_number = ($page_number - 1) * $results_per_page;
+
+	// Получаем выбранные результаты из БД и отображаем их на странице
+	// LIMIT 0,5 - начать с нулевой записи и отобразить 5 записей
+	$sql_pages_limit = 'LIMIT ' . $starting_limit_number . ',' . $results_per_page;
+
+	$result['number_of_pages'] = $number_of_pages; // 3
+	$result['page_number'] = $page_number; // 2
+	$result['sql_pages_limit'] = $sql_pages_limit; // LIMIT 3,3
+
+	return $result;
+}
+// - // Пагинация
+
 ?>

@@ -11,7 +11,7 @@
 			<?php } ?>
 		</div>
 
-		<div class="row mb-40">
+		<div class="row">
 
 			<?php foreach ($posts as $post): ?>
 				<!-- Карточка блога -->
@@ -19,5 +19,10 @@
 			<?php endforeach ?>
 
 		</div>
+
+		<div class="row mb-40">
+			<?php require ROOT . "templates/_parts/_pagination.tpl" ?>
+		</div>
+
 	</div>
 </div>

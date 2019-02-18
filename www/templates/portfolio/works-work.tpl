@@ -65,14 +65,50 @@
 				<?php endif ?>
 
 			</div>
+
+			<!-- Навигация -->
 			<div class="col-md-10 offset-md-1 buttons-navigation">
 				<div class="buttons-navigation__backward">
-					<div class="button__arrow-wrap"><a class="button button-backward" href="#!">Все работы</a><i class="fas fa-arrow-left"></i></div>
+					<?php if ( $prevId != '' ): ?>
+						<div class="button__arrow-wrap">
+							<a class="button button-backward" 
+								href="<?=HOST?>portfolio/work?id=<?=$prevId?>" >
+								Предыдущая работа
+							</a>
+							<i class="fas fa-arrow-left"></i>
+						</div>
+					<?php else: ?>
+						<div class="button__arrow-wrap">
+							<a class="button button-backward" 
+								href="<?=HOST?>portfolio" >
+								Все работы
+							</a>
+							<i class="fas fa-arrow-left"></i>
+						</div>
+					<?php endif ?>
 				</div>
+
 				<div class="buttons-navigation__forward">
-					<div class="button__arrow-wrap"><a class="button button-forward" href="#!">Следующая работа</a><i class="fas fa-arrow-right"></i></div>
+					<?php if ( $nextId != '' ): ?>
+						<div class="button__arrow-wrap">
+							<a class="button button-forward" 
+								href="<?=HOST?>portfolio/work?id=<?=$nextId?>" >
+								Следующая работа
+							</a>
+							<i class="fas fa-arrow-right"></i>
+						</div>
+					<?php else: ?>
+						<div class="button__arrow-wrap">
+							<a class="button button-forward" 
+								href="<?=HOST?>portfolio" >
+								Все работы
+							</a>
+							<i class="fas fa-arrow-right"></i>
+						</div>
+					<?php endif ?>
 				</div>
 			</div>
+			<!-- // Навигация -->
 		</div>
 	</div>
 </div>

@@ -23,6 +23,10 @@ if ( isset($_POST['workUpdate']) ) {
 		$errors[] = ['title' => 'Введите технологии, использованные в работе' ];
 	}
 
+	if ( trim($_POST['link']) == '' ) {
+		$errors[] = ['title' => 'Введите ссылку на проект' ];
+	}
+
 	if ( empty($errors) ) {
 
 		$work->title = htmlentities(trim($_POST['title']));
