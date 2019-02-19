@@ -156,4 +156,9 @@ function pagination($results_per_page, $type){
 }
 // - // Пагинация
 
+function price_format($price){
+	// number_format — Format a number with grouped thousands
+	return number_format($price, 0, '', ' ');
+}
+
 ?>
