@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 18, 2019 at 04:23 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.7
+-- Generation Time: Feb 20, 2019 at 12:08 AM
+-- Server version: 8.0.12
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `WD05-project-grigorovich`
+-- Database: `wd05-project-grigorovich`
 --
 
 -- --------------------------------------------------------
@@ -50,7 +50,7 @@ INSERT INTO `about` (`id`, `name`, `description`, `photo`) VALUES
 
 CREATE TABLE `categories` (
   `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `cat_title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `comments` (
   `id` int(11) UNSIGNED NOT NULL,
   `post_id` int(11) UNSIGNED DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -86,13 +86,14 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
-(1, 41, 18, 'Новый комментарий', '2019-02-11 16:47:39'),
-(2, 41, 1, 'Замечательный парк', '2019-02-11 19:02:58'),
-(3, 41, 18, 'Замечательный парк, обязательно отправлюсь туда', '2019-02-11 19:43:42'),
-(4, 41, 18, 'Замечательный парк, обязательно отправлюсь туда этим летом', '2019-02-11 21:32:03'),
+(1, 41, 18, 'Не люблю mail.ru.', '2019-02-11 16:47:39'),
+(2, 41, 1, 'Интересно. Когда-нибудь попробую установить его.', '2019-02-11 19:02:58'),
+(3, 41, 18, 'Стоит установить что-нибудь одно от mail.ru, обязательно следом подтянется приблуда. И попробуй ещё выкорчевать её!', '2019-02-11 19:43:42'),
+(4, 41, 18, 'Приблуда от mail.ru подтянет за собой ещё одно приблуду. И ещё. И ещё.', '2019-02-11 21:32:03'),
 (5, 39, 18, 'Экономно.', '2019-02-11 21:33:49'),
 (6, 39, 1, 'Бережливо.', '2019-02-11 21:58:53'),
-(7, 38, 23, 'Комментарий поста', '2019-02-11 22:13:45');
+(7, 38, 23, 'Комментарий поста', '2019-02-11 22:13:45'),
+(8, 31, 28, 'Хорошо, чтобы узоры в дизайне были не просто, а имели определенный смысл.', '2019-02-18 22:58:43');
 
 -- --------------------------------------------------------
 
@@ -124,6 +125,30 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `surname`, `s
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `price` int(11) UNSIGNED DEFAULT NULL,
+  `price_old` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `desc` text COLLATE utf8mb4_unicode_520_ci,
+  `img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `goods`
+--
+
+INSERT INTO `goods` (`id`, `title`, `price`, `price_old`, `desc`, `img`, `img_small`) VALUES
+(1, 'SSD-накопитель Kingston UV500 120GB SUV500MS/120G', 90, '120', '<p>Интерфейсы mSATA, SATA 3.0, контроллер Marvell 88SS1074, микросхемы 3D TLC NAND, последовательный доступ: 520/320 MBps, случайный доступ: 79000/18000 IOps</p>\r\n\r\n<div>\r\n<h3>Описание</h3>\r\n</div>\r\n\r\n<div>\r\n<div>\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Общая информация</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Дата выхода на рынок</td>\r\n			<td>2018&nbsp;г.</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Основные</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Объём</td>\r\n			<td>120 ГБ</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Форм-фактор</td>\r\n			<td>mSATA</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Интерфейс</td>\r\n			<td>SATA 3.0</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип микросхем Flash</td>\r\n			<td>3D TLC NAND</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Контроллер</td>\r\n			<td>Marvell 88SS1074</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Технические характеристики</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Аппаратное шифрование</td>\r\n			<td>AES 256bit</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Скорость последовательного чтения</td>\r\n			<td>520&nbsp;МБ/с</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Скорость последовательной записи</td>\r\n			<td>320&nbsp;МБ/с</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Средняя скорость случайного чтения</td>\r\n			<td>79 000&nbsp;IOps</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Средняя скорость случайной записи</td>\r\n			<td>18 000&nbsp;IOps</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Энергопотребление (чтение/запись)</td>\r\n			<td>2.32&nbsp;Вт &nbsp;(макс.)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Энергопотребление (ожидание)</td>\r\n			<td>0.195&nbsp;Вт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Время наработки на отказ (МТBF)</td>\r\n			<td>1 000 000&nbsp;ч</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Толщина</td>\r\n			<td>4.85&nbsp;мм</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Комплектация</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Комплект поставки</td>\r\n			<td>отдельный накопитель</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Адаптер 3.5&quot;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n</div>\r\n', '754451807308.jpeg', '320-754451807308.jpeg'),
+(3, 'Оперативная память 1 ГБ', 20, '50', '<p>Планка оперативной памяти стандарта DDR3, ёмкость 1ГБ, PC3-10600.</p>\r\n', '451087932005.jpg', '320-451087932005.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -150,11 +175,11 @@ INSERT INTO `jobs` (`id`, `period`, `title`, `description`) VALUES
 
 CREATE TABLE `messages` (
   `id` int(11) UNSIGNED NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_file_name_original` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file_name_original` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -175,13 +200,13 @@ INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_ori
 
 CREATE TABLE `posts` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_520_ci,
+  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
-  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `cat` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `post_img_small` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cat` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `update_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -256,11 +281,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `surname`, `country`, `city`, `avatar`, `avatar_small`, `recovery_code`, `recovery_code_times`) VALUES
 (1, 'info@uac.com', '$2y$10$nqPT0V3S6yN2O7m.C3pDA.qW0XchH/HtwidJpLrffNNdcdaKWgbOK', 'admin', 'Сергей', 'Григорович', 'Беларусь', 'Березино', '979656711358.jpg', '48-979656711358.jpg', 'kFygG5z2UduJ6ew', 0),
-(18, 'mail@mail.ru', '$2y$10$RTTcbKp45y.niAtD75Qm0egKEAmEMULIsr9KgALby4NUy.lYCkngG', 'user', 'Дэнни', 'Трэхо', '', '', '501420476461.jpg', '48-501420476461.jpg', NULL, NULL),
+(18, 'mail@mail.ru', '$2y$10$RTTcbKp45y.niAtD75Qm0egKEAmEMULIsr9KgALby4NUy.lYCkngG', 'user', 'Дэнни', 'Трэхо', 'США', 'Лос-Анджелес', '501420476461.jpg', '48-501420476461.jpg', NULL, NULL),
 (19, 'info3@uac.com', '$2y$10$XG47VIsw4qWGPLlL3HAJUee0Q9s1rhv1cSZhMXkIQYn656DCV5Se2', 'user', 'Николай', 'Троекуров', 'Россия', 'Волгоград', '528185697112.jpg', '48-528185697112.jpg', '0h5D4KQSLZm792k', 3),
 (23, 'test@test.com', '$2y$10$UT21LxyqtFC/RX.NFo4Jhes3mVidnJR2LJtd4iVrPHYwZZEK8HI8y', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (26, 'frank@telecom.ru', '$2y$10$u/tvx/.r8T8lm83Qbf4zNe/sXJ3lXIQwmNknN1Pee9FYstAbcKc0u', 'user', 'Фрэнк', 'Давыдов', 'Россия', 'Питер', '324452254963.jpg', '48-324452254963.jpg', NULL, NULL),
-(28, 'delgardo@squad.com', '$2y$10$QWXxfSNdUH.65SKNgv3PQO4gA9R4n.DX/aLgQcxBJIPh82jMWNNIu', 'user', 'Дельгардо', 'Испанец', 'Испания', '', '857267536894.jpg', '48-857267536894.jpg', NULL, NULL);
+(28, 'delgardo@dow.com', '$2y$10$QWXxfSNdUH.65SKNgv3PQO4gA9R4n.DX/aLgQcxBJIPh82jMWNNIu', 'user', 'Frank', 'Delgado', 'USA', 'Оклахома', '857267536894.jpg', '48-857267536894.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -270,16 +295,16 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `surname`, `coun
 
 CREATE TABLE `works` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_520_ci,
-  `result` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `technology` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `result` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `technology` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
-  `link` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `github` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `work_image` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `work_image_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `link` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `github` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `work_image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `work_image_small` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `update_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -321,6 +346,12 @@ ALTER TABLE `comments`
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `goods`
+--
+ALTER TABLE `goods`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -370,51 +401,67 @@ ALTER TABLE `works`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
 --
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT for table `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

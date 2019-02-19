@@ -14,7 +14,8 @@
 		|| (@$_SERVER['REDIRECT_URL'] == '/edit-text') 
 		|| (@$_SERVER['REDIRECT_URL'] == '/portfolio/work-new') 
 		|| (@$_SERVER['REDIRECT_URL'] == '/portfolio/work-edit') 
-		|| (@$_SERVER['REDIRECT_URL'] == '/shop/new') ): ?>
+		|| (@$_SERVER['REDIRECT_URL'] == '/shop/new') 
+		|| (@$_SERVER['REDIRECT_URL'] == '/shop/item-edit') ): ?>
 		<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script>
 	<?php endif ?>
 	<!-- Скрипт для проверки поля ввода формы восстановления пароля -->

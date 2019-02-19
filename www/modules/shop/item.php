@@ -1,6 +1,12 @@
 <?php
 
-$title = "Страница товара";
+if ( !isset($_GET['id']) ) {
+	header("Location: " . HOST . "shop/");
+	exit();
+}
+
+$item = R::load('goods', $_GET['id']);
+$title = $item['title'];
 
 // echo "<pre>";
 // print_r($goods);

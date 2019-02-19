@@ -228,6 +228,8 @@ input[data-skill][type="number"]:valid+span:after {
 	display: flex;
 	-webkit-align-items: center;
 	        align-items: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 }
 /* END - SHOP */
 
