@@ -48,7 +48,18 @@
 						</div>
 					</div>
 
-					<a href="#!" class="button mb-15" id="addToCart">В корзину</a>
+					<form id="addToCart" 
+						method="POST" 
+						action="<?=HOST?>addtocart" >
+						<input type="hidden" 
+							name="itemId" 
+							id="itemId" 
+							value="<?=$item['id']?>" >
+						<input type="submit" 
+							class="button mb-15" 
+							name="addToCart" 
+							value="В корзину" >
+					</form>
 
 					<?=$item['desc']?>
 				</div>

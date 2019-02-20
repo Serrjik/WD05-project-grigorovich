@@ -1,5 +1,6 @@
 	<!-- build:jsLibs js/libs.js -->
 	<script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
+	<script src="<?=HOST?>libs/jquery.cookie.js"></script><!-- endbuild -->
 	<!-- build:js Main js/main.js -->
 	<script src="<?=HOST?>templates/assets/js/main.js"></script>
 	<!-- Скрипт для проверки поля ввода формы восстановления пароля -->

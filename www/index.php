@@ -79,27 +79,27 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/blog/post.php";
 		break;
 
-		// ::::::::::::::::::::: PORTFOLIO :::::::::::::::::::::
+	// ::::::::::::::::::::: PORTFOLIO :::::::::::::::::::::
 
-		case 'portfolio':
-			include ROOT . "modules/portfolio/index.php";
-			break;
+	case 'portfolio':
+		include ROOT . "modules/portfolio/index.php";
+		break;
 
-		case 'portfolio/work-new':
-			include ROOT . "modules/portfolio/work-new.php";
-			break;
+	case 'portfolio/work-new':
+		include ROOT . "modules/portfolio/work-new.php";
+		break;
 
-		case 'portfolio/work-edit':
-			include ROOT . "modules/portfolio/work-edit.php";
-			break;
+	case 'portfolio/work-edit':
+		include ROOT . "modules/portfolio/work-edit.php";
+		break;
 
-		// case 'portfolio/work-delete':
-		// 	include ROOT . "modules/portfolio/work-delete.php";
-		// 	break;
+	// case 'portfolio/work-delete':
+	// 	include ROOT . "modules/portfolio/work-delete.php";
+	// 	break;
 
-		case 'portfolio/work':
-			include ROOT . "modules/portfolio/work.php";
-			break;
+	case 'portfolio/work':
+		include ROOT . "modules/portfolio/work.php";
+		break;
 
 	// ::::::::::::::::::::: CATEGORIES :::::::::::::::::::::
 
@@ -183,6 +183,12 @@ switch ( $uri[0] ) {
 
 	case 'shop/item-delete':
 		include ROOT . "modules/shop/item-delete.php";
+		break;
+
+	// ::::::::::::::::::::: ESHOP :::::::::::::::::::::
+
+	case 'addtocart':
+		include ROOT . "modules/cart/addtocart.php";
 		break;
 
 	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::

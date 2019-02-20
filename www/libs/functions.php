@@ -101,6 +101,17 @@ function commentNumber ($num) {
 	echo  $num.' комментари'.$term;
 }
 
+// Функция выводит количество товаров с правильным окончанием
+function goodsNumber($number) {
+
+	if($number == 0) {$term = "ов";}
+	if($number == 1 ) {$term = "";}
+	if($number >= 2 ) {$term = "а";}
+	if($number >= 5 ) {$term = "ов";}
+	echo $number.' товар'.$term;
+
+}
+
 // Adjusting text encoding
 function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';

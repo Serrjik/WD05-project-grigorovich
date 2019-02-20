@@ -7,6 +7,8 @@
 		<?php include ROOT . 'templates/_parts/_header-logo.tpl'; ?>
 		<?php include ROOT . 'templates/_parts/_header-nav.tpl'; ?>
 	</div>
+	<!-- Товаров в корзине -->
+	<?php include ROOT . 'templates/_parts/_cart-in-header.tpl'; ?>
 
 	<?php
 	if ( isLoggedIn() ) {
