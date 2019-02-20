@@ -24,7 +24,7 @@ $uri = explode('?', $uri);
 
 switch ( $uri[0] ) {
 	case '':
-		include "modules/main/index.php";
+		include ROOT . "modules/main/index.php";
 		break;
 
 	// ::::::::::::::::::::: USERS :::::::::::::::::::::
@@ -122,37 +122,37 @@ switch ( $uri[0] ) {
 	// ::::::::::::::::::::: CONTACTS :::::::::::::::::::::
 
 	case 'contacts':
-		include "modules/contacts/index.php";
+		include ROOT . "modules/contacts/index.php";
 		break;
 
 	case 'contacts-edit':
-		include "modules/contacts/edit.php";
+		include ROOT . "modules/contacts/edit.php";
 		break;
 
 	case 'messages':
-		include "modules/contacts/messages.php";
+		include ROOT . "modules/contacts/messages.php";
 		break;
 
 	case 'message-delete':
-		include "modules/contacts/delete.php";
+		include ROOT . "modules/contacts/delete.php";
 		break;
 
 	// ::::::::::::::::::::: ABOUT ME :::::::::::::::::::::
 
 	case 'about':
-		include "modules/about/index.php";
+		include ROOT . "modules/about/index.php";
 		break;
 
 	case 'edit-text':
-		include "modules/about/edit-text.php";
+		include ROOT . "modules/about/edit-text.php";
 		break;
 
 	case 'edit-skills':
-		include "modules/about/edit-skills.php";
+		include ROOT . "modules/about/edit-skills.php";
 		break;
 
 	case 'edit-jobs':
-		include "modules/about/edit-jobs.php";
+		include ROOT . "modules/about/edit-jobs.php";
 		break;
 
 	case 'job-delete':
@@ -194,7 +194,7 @@ switch ( $uri[0] ) {
 	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::
 
 	default:
-		include "modules/main/index.php";
+		include ROOT . "modules/main/index.php";
 		break;
 }
 

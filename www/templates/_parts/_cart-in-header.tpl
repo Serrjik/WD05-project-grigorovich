@@ -4,7 +4,7 @@
 	<?php $itemsInCart = array_sum( json_decode($_COOKIE['cart'], true) ); ?>
 
 	<?php if ( $itemsInCart > 0 ): ?>
-		<div class="cart mt-60">
+		<div class="cart mt-80">
 			<a href="<?=HOST?>cart">
 				<i class="fas fa-shopping-cart"></i>
 				<?=goodsNumber($itemsInCart); ?>
