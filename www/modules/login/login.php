@@ -31,12 +31,12 @@ if ( isset($_POST['login']) ) {
 				// Возможно этот чекбокс приведёт к варианту работы корзины, который отличается от задуманного
 				// Если будет сбрасываться переменная корзины в сессии
 				// В PHP v. 5.6 не нужно убивать сессию для установки этих параметров
-				if ( isset($_POST['rememberMe'])) {
+				/*if ( isset($_POST['rememberMe'])) {
 					session_destroy();
 					ini_set('session.gc_maxlifetime', 31104000); // 60*60*24*30*12 = 1 год
 					ini_set('session.cookie_lifetime', 31104000);
 					session_start();
-				}
+				}*/
 
 				$_SESSION['logged_user'] = $user;
 				$_SESSION['role'] = $user->role;

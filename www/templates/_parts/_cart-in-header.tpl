@@ -4,12 +4,12 @@
 	<?php $itemsInCart = array_sum( json_decode($_COOKIE['cart'], true) ); ?>
 
 	<?php if ( $itemsInCart > 0 ): ?>
-		<div class="cart mt-80">
-			<a href="<?=HOST?>cart">
+		<!-- <div class="cart mt-80"> -->
+			<a class="cart mt-80" href="<?=HOST?>cart">
 				<i class="fas fa-shopping-cart"></i>
 				<?=goodsNumber($itemsInCart); ?>
 			</a>
-		</div>
+		<!-- </div> -->
 	<?php endif ?>
 
 <?php endif ?>

@@ -275,6 +275,7 @@ input[data-skill][type="number"]:valid+span:after {
 	font-size: 14px;
 	padding: 10px 20px;
 	background-color: #FFF;
+	text-decoration: none;
 }
 
 .cart a {

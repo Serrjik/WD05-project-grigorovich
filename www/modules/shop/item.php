@@ -8,11 +8,6 @@ if ( !isset($_GET['id']) ) {
 $item = R::load('goods', $_GET['id']);
 $title = $item['title'];
 
-// echo "<pre>";
-// print_r($goods);
-// echo "</pre>";
-// die();
-
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
