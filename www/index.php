@@ -199,6 +199,12 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/cart/removefromcart.php";
 		break;		
 
+	// ::::::::::::::::::::: ORDERS :::::::::::::::::::::
+
+	case 'order-create':
+		include ROOT . "modules/orders/order-create.php";
+		break;
+
 	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::
 
 	default:
