@@ -94,7 +94,7 @@
 						type="text" 
 						name="phone" 
 						placeholder="Введите телефон" 
-						value="555-55-55" />
+						value="555-55-55" /> <!-- Удалить value после тестирования -->
 				</label>
 			</div>
 		</div>

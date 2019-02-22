@@ -1,7 +1,10 @@
 <?php
 
 $title = "Создать заказ - Магазин";
-	
+
+/*   * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	ПОЛУЧАЕМ ДАННЫЕ ДЛЯ ВЫВОДА ТОВАРОВ ЗАКАЗА
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *   */
 /*
 	Корзину формируем на основе корзины в Cookies
 	Но, в Cookies лежат только ID и КОЛ-ВО товаров.
@@ -42,6 +45,51 @@ if ( $cartGoodsCount <= 0 ) {
 	header('Location: ' . HOST . 'cart');
 	exit();
 }
+
+/*   * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	ОБРАБОТКА POST ЗАПРОСА, СОХРАНЯЕМ ЗАКАЗ В БД
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *   */
+
+if ( isset($_POST['createOrder']) ) {
+
+	if ( $cartGoodsCount <= 0 ) {
+		$errors[] = [
+			'title' => 'Заказ не может быть пустым', 
+			'desc' => '<p>Добавьте товары в корзину чтобы сделать заказ.</p>'
+		];
+	}
+
+	if ( trim($_POST['name']) == '' ) {
+		$errors[] = ['title' => 'Введите Имя' ];
+	}
+
+	if ( trim($_POST['surname']) == '' ) {
+		$errors[] = ['title' => 'Введите Фамилию' ];
+	}
+
+	if ( trim($_POST['email']) == '' ) {
+		$errors[] = ['title' => 'Введите Email' ];
+	}
+
+	if ( trim($_POST['phone']) == '' ) {
+		$errors[] = ['title' => 'Введите телефон' ];
+	}
+
+	if ( empty($errors) ) {
+
+		$order = R::dispense('orders');
+
+		$order->name = htmlentities($_POST['name']);
+		$order->surname = htmlentities($_POST['surname']);
+		$order->email = htmlentities($_POST['email']);
+		$order->phone = htmlentities($_POST['phone']);
+		$order->address = htmlentities($_POST['address']);
+		$order->items = json_encode($orderedGoodsSummary);
+	}
+
+
+}
+
 
 // Готовим контент для центральной части
 ob_start();

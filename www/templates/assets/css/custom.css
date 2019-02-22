@@ -46,6 +46,10 @@ body::before {
 	color: #38505e !important;
 }
 
+.logo__icon {
+	text-decoration: none;
+}
+
 .profile__button {
 	z-index: 2;
 }
