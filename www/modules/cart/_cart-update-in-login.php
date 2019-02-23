@@ -5,7 +5,7 @@ $currentUser = $_SESSION['logged_user'];
 $user = R::load('users', $currentUser->id);
 
 // Определяем корзину в БД
-$cartServer = json_decode($user->cart, true);
+$cartServer = ( (json_decode($user->cart, true) == NULL) ? array() : json_decode($user->cart, true) );
 
 // Определяем локальную корзину
 if ( isset($_COOKIE['cart']) ) {

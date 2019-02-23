@@ -1,4 +1,4 @@
-<div class="col-4 card-post">
+<div class="card-post">
 
 	<div class="card-post__image card-goods__image mb-15">
 		<?php if ( $item->img_small != "" ): ?>

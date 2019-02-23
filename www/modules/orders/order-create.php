@@ -47,6 +47,20 @@ if ( $cartGoodsCount <= 0 ) {
 }
 
 /*   * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	МАССИВ ТОВАРОВ В ЗАКАЗЕ ПОЛЬЗОВАТЕЛЯ
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *   */
+
+$orderedGoodsSummary = array();
+foreach ( $cartGoods as $item ) {
+	$newItem = array();
+	$newItem['id'] = $item->id;
+	$newItem['price'] = $item->price;
+	$newItem['count'] = $cartItemsArray[$item->id];
+	$newItem['title'] = $item->title;
+	$orderedGoodsSummary[] = $newItem;
+}
+
+/*   * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 	ОБРАБОТКА POST ЗАПРОСА, СОХРАНЯЕМ ЗАКАЗ В БД
 * * * * * * * * * * * * * * * * * * * * * * * * * * * *   */
 
@@ -85,11 +99,41 @@ if ( isset($_POST['createOrder']) ) {
 		$order->phone = htmlentities($_POST['phone']);
 		$order->address = htmlentities($_POST['address']);
 		$order->items = json_encode($orderedGoodsSummary);
+
+		if ( isLoggedIn() ) {
+			$order->userId = $_SESSION['logged_user']['id'];
+		}
+
+		$order->itemsCount = $cartGoodsCount;
+		$order->totalPrice = $cartGoodsTotalPrice;
+
+		$order->status = 'new';
+		// Поступила ли оплата?
+		$order->payment = 'no';
+		$order->dateTime = R::isoDateTime();
+
+		R::store($order);
+
+		// Очистить корзину в COOKIES
+		SetCookie("cart", "");
+
+		// Очистить корзину в БД
+		if ( isLoggedIn() ) {
+			$currentUser = $_SESSION['logged_user'];
+			$user = R::load('users', $currentUser->id);
+			$user->cart = "";
+			R::store($user);
+		}
+
+		// Сохраняем ID заказа в сессию чтобы после идентифицировать заказ при оплате
+		$_SESSION['current_order'] = $order['id'];
+
+		header('Location: ' . HOST . 'order-created-success');
+		exit();
+
 	}
 
-
 }
-
 
 // Готовим контент для центральной части
 ob_start();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 21, 2019 at 11:50 PM
+-- Generation Time: Feb 23, 2019 at 11:32 PM
 -- Server version: 8.0.12
 -- PHP Version: 7.2.10
 
@@ -144,7 +144,8 @@ CREATE TABLE `goods` (
 
 INSERT INTO `goods` (`id`, `title`, `price`, `price_old`, `desc`, `img`, `img_small`) VALUES
 (1, 'SSD-накопитель Kingston UV500 120GB SUV500MS/120G', 90, '120', '<p>Интерфейсы mSATA, SATA 3.0, контроллер Marvell 88SS1074, микросхемы 3D TLC NAND, последовательный доступ: 520/320 MBps, случайный доступ: 79000/18000 IOps</p>\r\n\r\n<div>\r\n<h3>Описание</h3>\r\n</div>\r\n\r\n<div>\r\n<div>\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Общая информация</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Дата выхода на рынок</td>\r\n			<td>2018&nbsp;г.</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Основные</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Объём</td>\r\n			<td>120 ГБ</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Форм-фактор</td>\r\n			<td>mSATA</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Интерфейс</td>\r\n			<td>SATA 3.0</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип микросхем Flash</td>\r\n			<td>3D TLC NAND</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Контроллер</td>\r\n			<td>Marvell 88SS1074</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Технические характеристики</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Аппаратное шифрование</td>\r\n			<td>AES 256bit</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Скорость последовательного чтения</td>\r\n			<td>520&nbsp;МБ/с</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Скорость последовательной записи</td>\r\n			<td>320&nbsp;МБ/с</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Средняя скорость случайного чтения</td>\r\n			<td>79 000&nbsp;IOps</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Средняя скорость случайной записи</td>\r\n			<td>18 000&nbsp;IOps</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Энергопотребление (чтение/запись)</td>\r\n			<td>2.32&nbsp;Вт &nbsp;(макс.)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Энергопотребление (ожидание)</td>\r\n			<td>0.195&nbsp;Вт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Время наработки на отказ (МТBF)</td>\r\n			<td>1 000 000&nbsp;ч</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Толщина</td>\r\n			<td>4.85&nbsp;мм</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Комплектация</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Комплект поставки</td>\r\n			<td>отдельный накопитель</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Адаптер 3.5&quot;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n</div>\r\n', '754451807308.jpeg', '320-754451807308.jpeg'),
-(3, 'Оперативная память 1 ГБ', 20, '50', '<p>Планка оперативной памяти стандарта DDR3, ёмкость 1ГБ, PC3-10600.</p>\r\n', '451087932005.jpg', '320-451087932005.jpg');
+(3, 'Оперативная память 1 ГБ', 20, '50', '<p>Планка оперативной памяти стандарта DDR3, ёмкость 1ГБ, PC3-10600.</p>\r\n', '451087932005.jpg', '320-451087932005.jpg'),
+(4, 'Наушники Ginzzu GM-571BT S5', 90, '', '<p><strong>Ginzzu GM-571BT S5 - </strong>беспроводные наушники с микрофоном, портативные, складные, оформление закрытое, излучатель 40 мм, 20-20000 Гц, 32 Ом, кабель 1.2 м, расстояние 10 м.</p>\r\n\r\n<div>\r\n<h3>Описание</h3>\r\n</div>\r\n\r\n<div>\r\n<div>\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Общая информация</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Назначение</td>\r\n			<td>портативные</td>\r\n		</tr>\r\n	</tbody>\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n			<div>Основные</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип</td>\r\n			<td>наушники с микрофоном</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Конструкция</td>\r\n			<td>накладные</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Акустическое оформление</td>\r\n			<td>закрытое</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Беспроводной интерфейс</td>\r\n			<td>Bluetooth</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип беспроводных наушников</td>\r\n			<td>съёмный аудиокабель</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Пыле-, влаго-, ударопрочность</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Материал корпуса</td>\r\n			<td>пластик, металл</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Цвет</td>\r\n			<td>черный</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n</div>\r\n', '119185909550.jpeg', '320-119185909550.jpeg');
 
 -- --------------------------------------------------------
 
@@ -191,6 +192,37 @@ INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_ori
 (27, 'foo@uac.com', 'Роман', 'Предложение', '27_vipusk.pdf', '559959857993.pdf', '2019-02-13 22:00:14'),
 (28, 'foo@tut.by', 'Егор', 'Отзыв', 'Как улучшить зрение 9 упражнений.docx', '791869768939.docx', '2019-02-13 22:05:41'),
 (29, 'mail@mail.ru', 'Дельгардо', 'Priva', 'Что позволяет себе этот RedBean.png', '159212819300.png', '2019-02-13 22:08:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `surname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `items` text COLLATE utf8mb4_unicode_520_ci,
+  `user_id` int(11) UNSIGNED DEFAULT NULL,
+  `items_count` int(11) UNSIGNED DEFAULT NULL,
+  `total_price` int(11) UNSIGNED DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `payment` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `surname`, `email`, `phone`, `address`, `items`, `user_id`, `items_count`, `total_price`, `status`, `payment`, `date_time`) VALUES
+(1, 'Сергей', 'Григорович', 'info@uac.com', '555-55-55', '', '[{\"id\":\"1\",\"price\":\"90\",\"count\":1,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"},{\"id\":\"3\",\"price\":\"20\",\"count\":2,\"title\":\"\\u041e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0430\\u044f \\u043f\\u0430\\u043c\\u044f\\u0442\\u044c 1 \\u0413\\u0411\"}]', 1, 3, 130, 'new', 'no', '2019-02-22 22:04:34'),
+(2, 'Сергей', 'Григорович', 'info@uac.com', '555-55-55', 'Березино, ул. Октябрьская', '[{\"id\":\"1\",\"price\":\"90\",\"count\":1,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"}]', 1, 1, 90, 'new', 'no', '2019-02-22 22:19:42'),
+(3, 'Николай', 'Троекуров', 'info3@uac.com', '555-55-55', 'Россия, Кистенёвка', '[{\"id\":\"1\",\"price\":\"90\",\"count\":2,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"},{\"id\":\"4\",\"price\":\"90\",\"count\":1,\"title\":\"\\u041d\\u0430\\u0443\\u0448\\u043d\\u0438\\u043a\\u0438 Ginzzu GM-571BT S5\"}]', 19, 3, 270, 'new', 'no', '2019-02-22 23:13:13');
 
 -- --------------------------------------------------------
 
@@ -281,9 +313,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `surname`, `country`, `city`, `avatar`, `avatar_small`, `recovery_code`, `recovery_code_times`, `cart`) VALUES
-(1, 'info@uac.com', '$2y$10$nqPT0V3S6yN2O7m.C3pDA.qW0XchH/HtwidJpLrffNNdcdaKWgbOK', 'admin', 'Сергей', 'Григорович', 'Беларусь', 'Березино', '979656711358.jpg', '48-979656711358.jpg', 'kFygG5z2UduJ6ew', 0, '{\"1\":1,\"3\":3}'),
+(1, 'info@uac.com', '$2y$10$nqPT0V3S6yN2O7m.C3pDA.qW0XchH/HtwidJpLrffNNdcdaKWgbOK', 'admin', 'Сергей', 'Григорович', 'Беларусь', 'Березино', '979656711358.jpg', '48-979656711358.jpg', 'kFygG5z2UduJ6ew', 0, '[]'),
 (18, 'mail@mail.ru', '$2y$10$RTTcbKp45y.niAtD75Qm0egKEAmEMULIsr9KgALby4NUy.lYCkngG', 'user', 'Дэнни', 'Трэхо', 'США', 'Лос-Анджелес', '501420476461.jpg', '48-501420476461.jpg', NULL, NULL, '{\"1\":10,\"3\":2}'),
-(19, 'info3@uac.com', '$2y$10$XG47VIsw4qWGPLlL3HAJUee0Q9s1rhv1cSZhMXkIQYn656DCV5Se2', 'user', 'Николай', 'Троекуров', 'Россия', 'Волгоград', '528185697112.jpg', '48-528185697112.jpg', '0h5D4KQSLZm792k', 3, '{\"1\":10,\"3\":2}'),
+(19, 'info3@uac.com', '$2y$10$XG47VIsw4qWGPLlL3HAJUee0Q9s1rhv1cSZhMXkIQYn656DCV5Se2', 'user', 'Николай', 'Троекуров', 'Россия', 'Волгоград', '528185697112.jpg', '48-528185697112.jpg', '0h5D4KQSLZm792k', 3, ''),
 (23, 'test@test.com', '$2y$10$UT21LxyqtFC/RX.NFo4Jhes3mVidnJR2LJtd4iVrPHYwZZEK8HI8y', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (26, 'frank@telecom.ru', '$2y$10$u/tvx/.r8T8lm83Qbf4zNe/sXJ3lXIQwmNknN1Pee9FYstAbcKc0u', 'user', 'Фрэнк', 'Давыдов', 'Россия', 'Питер', '324452254963.jpg', '48-324452254963.jpg', NULL, NULL, NULL),
 (28, 'delgardo@dow.com', '$2y$10$QWXxfSNdUH.65SKNgv3PQO4gA9R4n.DX/aLgQcxBJIPh82jMWNNIu', 'user', 'Frank', 'Delgado', 'USA', 'Оклахома', '857267536894.jpg', '48-857267536894.jpg', NULL, NULL, NULL);
@@ -368,6 +400,13 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_orders_user` (`user_id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -425,7 +464,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -438,6 +477,12 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `posts`

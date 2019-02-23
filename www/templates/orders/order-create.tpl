@@ -104,8 +104,7 @@
 			<input class="input-text" 
 				type="text" 
 				name="address" 
-				placeholder="Введите адрес доставки" 
-				value="555-55-55" />
+				placeholder="Введите адрес доставки" />
 		</label>
 
 		<input class="button button-save" 
