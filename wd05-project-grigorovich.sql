@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 23, 2019 at 11:32 PM
+-- Generation Time: Feb 24, 2019 at 11:55 PM
 -- Server version: 8.0.12
 -- PHP Version: 7.2.10
 
@@ -222,7 +222,10 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `name`, `surname`, `email`, `phone`, `address`, `items`, `user_id`, `items_count`, `total_price`, `status`, `payment`, `date_time`) VALUES
 (1, 'Сергей', 'Григорович', 'info@uac.com', '555-55-55', '', '[{\"id\":\"1\",\"price\":\"90\",\"count\":1,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"},{\"id\":\"3\",\"price\":\"20\",\"count\":2,\"title\":\"\\u041e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0430\\u044f \\u043f\\u0430\\u043c\\u044f\\u0442\\u044c 1 \\u0413\\u0411\"}]', 1, 3, 130, 'new', 'no', '2019-02-22 22:04:34'),
 (2, 'Сергей', 'Григорович', 'info@uac.com', '555-55-55', 'Березино, ул. Октябрьская', '[{\"id\":\"1\",\"price\":\"90\",\"count\":1,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"}]', 1, 1, 90, 'new', 'no', '2019-02-22 22:19:42'),
-(3, 'Николай', 'Троекуров', 'info3@uac.com', '555-55-55', 'Россия, Кистенёвка', '[{\"id\":\"1\",\"price\":\"90\",\"count\":2,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"},{\"id\":\"4\",\"price\":\"90\",\"count\":1,\"title\":\"\\u041d\\u0430\\u0443\\u0448\\u043d\\u0438\\u043a\\u0438 Ginzzu GM-571BT S5\"}]', 19, 3, 270, 'new', 'no', '2019-02-22 23:13:13');
+(3, 'Николай', 'Троекуров', 'info3@uac.com', '555-55-55', 'Россия, Кистенёвка', '[{\"id\":\"1\",\"price\":\"90\",\"count\":2,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"},{\"id\":\"4\",\"price\":\"90\",\"count\":1,\"title\":\"\\u041d\\u0430\\u0443\\u0448\\u043d\\u0438\\u043a\\u0438 Ginzzu GM-571BT S5\"}]', 19, 3, 270, 'new', 'no', '2019-02-22 23:13:13'),
+(4, 'Николай', 'Троекуров', 'info3@uac.com', '555-55-55', 'Россия, Кистенёвка', '[{\"id\":\"3\",\"price\":\"20\",\"count\":2,\"title\":\"\\u041e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0430\\u044f \\u043f\\u0430\\u043c\\u044f\\u0442\\u044c 1 \\u0413\\u0411\"}]', 19, 2, 40, 'new', 'no', '2019-02-24 20:09:56'),
+(5, 'Николай', 'Троекуров', 'info3@uac.com', '555-55-55', 'Россия, Кистенёвка', '[{\"id\":\"4\",\"price\":\"90\",\"count\":1,\"title\":\"\\u041d\\u0430\\u0443\\u0448\\u043d\\u0438\\u043a\\u0438 Ginzzu GM-571BT S5\"}]', 19, 1, 90, 'new', 'no', '2019-02-24 20:53:19'),
+(6, 'Frank', 'Delgado', 'delgardo@squad.org', '555-55-55', 'USA', '[{\"id\":\"1\",\"price\":\"90\",\"count\":3,\"title\":\"SSD-\\u043d\\u0430\\u043a\\u043e\\u043f\\u0438\\u0442\\u0435\\u043b\\u044c Kingston UV500 120GB SUV500MS\\/120G\"}]', NULL, 3, 270, 'new', 'no', '2019-02-24 20:58:59');
 
 -- --------------------------------------------------------
 
@@ -482,7 +485,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`

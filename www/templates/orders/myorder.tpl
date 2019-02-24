@@ -7,7 +7,6 @@
 	<table class="table table-hover">
 		<thead>
 			<tr class="table-total">
-				<td></td>
 				<td>Наименование</td>
 				<td>Количество</td>
 				<td width="200">Стоимость</td>

@@ -14,9 +14,16 @@
 		<td class="text-success">
 			Оплачен
 		</td>
+		<td></td>
 	<?php else: ?>
 		<td class="text-danger">
 			Не оплачен
+		</td>
+		<td>
+			<a href="<?=HOST?>payment-choice?id=<?=$order->id?>" 
+				class="badge" >
+				Оплатить
+			</a>
 		</td>
 	<?php endif ?>
 </tr>

@@ -10,6 +10,7 @@ define('DB_PASS', '');
 define('SITE_NAME', 'Сайт портфолио - Сергей Григорович');
 define('SITE_EMAIL', 'info@serjik.zzz.com.ua');
 define('ADMIN_EMAIL', 'uac.sarge@gmail.com');
+define('YANDEX_WALLET', '410015752075988');
 
 // Устанавливает путь до корневой директории скрипта по протоколу HTTP
 // $_SERVER['REQUEST_SCHEME'] не использую, а вручную прописываю протокол http, потому что эта переменная поддерживается не всеми серверами

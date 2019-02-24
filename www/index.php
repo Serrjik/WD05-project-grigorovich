@@ -225,6 +225,15 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/orders/myorder.php";
 		break;
 
+	// ::::::::::::::::: PAYMENT SYSTEMS :::::::::::::::::
+
+	case 'payment-choice':
+		include ROOT . "modules/payments/payment-choice.php";
+		break;
+
+	case 'payment-yandex':
+		include ROOT . "modules/payments/yandex-payment.php";
+		break;
 	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::
 
 	default:
