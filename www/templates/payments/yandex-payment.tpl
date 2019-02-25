@@ -18,6 +18,8 @@ echo "</pre>";
 		<input type="hidden" name="targets" value="Оплата в магазине <?=SITE_NAME?> заказ № <?=$_SESSION['order']['id']?>" >
 		<input type="hidden" name="sum" value="<?=$_SESSION['order']['total_price']?>" data-type="number" > <!-- Сейчас здесь сумма без учёта комиссии -->
 
+		<input type="hidden" name="successURL" value="<?=HOST?>after-payment" >
+
 		<!-- <input type="hidden" name="comment" value="Хотелось бы получить дистанционное управление."> -->
 		<input type="hidden" name="need-fio" value="<?=$_SESSION['order']['name']?> <?=$_SESSION['order']['surname']?>" >
 		<input type="hidden" name="need-email" value="<?=$_SESSION['order']['email']?>" >

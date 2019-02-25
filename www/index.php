@@ -234,6 +234,15 @@ switch ( $uri[0] ) {
 	case 'payment-yandex':
 		include ROOT . "modules/payments/yandex-payment.php";
 		break;
+
+	case 'after-payment':
+		include ROOT . "modules/payments/after-payment.php";
+		break;
+
+	case 'payment-yandex-notify':
+		include ROOT . "modules/payments/payment-yandex-notify.php";
+		break;
+
 	// ::::::::::::::::::::: DEFAULT :::::::::::::::::::::
 
 	default:
