@@ -10,7 +10,7 @@
 	<td>
 		<?=$order->total_price?> рублей
 	</td>
-	<?php if ( $order->payment == 'yes' ): ?>
+	<?php if ( $order->payment == 'payed' ): ?>
 		<td class="text-success">
 			Оплачен
 		</td>

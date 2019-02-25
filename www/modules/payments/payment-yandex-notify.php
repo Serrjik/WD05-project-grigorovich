@@ -1,18 +1,8 @@
 <?php
 
-// echo"<pre>";
-// print_r($_POST);
-// echo"</pre>";
+// $text = json_encode($_POST);
 
-$text = json_encode($_POST);
-
-file_put_contents(ROOT . 'yandex-history.php', $text . PHP_EOL, FILE_APPEND);
-
-/*notification_type&operation_id&amount&currency&datetime&sender&codepro&notification_secret&label
-
-p2p-incoming&1234567&300.00&643&2011-07-01T09:00:00.000+04:00&41001XXXXXXXX&false&01234567890ABCDEF01234567890&
-
-p2p-incoming&1234567&300.00&643&2011-07-01T09:00:00.000+04:00&41001XXXXXXXX&false&01234567890ABCDEF01234567890&YM.label.12345*/
+// file_put_contents(ROOT . 'yandex-history.php', $text . PHP_EOL, FILE_APPEND);
 
 $string = $_POST['notification_type'] . '&' . 
 	$_POST['operation_id'] . '&' . 
@@ -26,9 +16,47 @@ $string = $_POST['notification_type'] . '&' .
 
 $hash = sha1($string);
 
-$myHash = 'My hash: ' . $hash;
-$yandexHash = 'Yandex hash: ' . $_POST['sha1_hash'];
+// $myHash = 'My hash: ' . $hash;
+// $yandexHash = 'Yandex hash: ' . $_POST['sha1_hash'];
 
-file_put_contents(ROOT . 'yandex-history.php', $myHash . PHP_EOL, $yandexHash . PHP_EOL, FILE_APPEND);
+// file_put_contents(ROOT . 'yandex-history.php', $myHash . PHP_EOL . $yandexHash . PHP_EOL, FILE_APPEND);
+
+/*$codeproString = 'codepro type:' . gettype($_POST['codepro']) . PHP_EOL . 
+	'codepro value:' . $_POST['codepro'] . PHP_EOL;*/
+
+/*$unacceptedString = 'unaccepted type:' . gettype($_POST['unaccepted']) . PHP_EOL . 
+	'unaccepted value:' . $_POST['unaccepted'] . PHP_EOL;*/
+/*
+file_put_contents(ROOT . 'yandex-history.php', $codeproString . PHP_EOL . 
+	$unacceptedString . PHP_EOL, FILE_APPEND);*/
+
+
+if ( $hash = $_POST['sha1_hash'] ) {
+	// Хеш локальный = хешу с Яндекса
+	/*file_put_contents(ROOT . 'yandex-history.php', 'SUCCESS' . PHP_EOL, FILE_APPEND);*/
+
+	$order = R::load('orders', $_POST['label']);
+
+	if ( $_POST['codepro'] === 'true' ) {
+		$order->payment = 'codepro';
+	}
+
+	if ( $_POST['unaccepted'] === 'true' ) {
+		$order->payment = 'unaccepted';
+	}
+
+	if ( ($_POST['codepro'] !== 'true') && ($_POST['unaccepted'] !== 'true') ) {
+		$order->payment = 'payed';
+	}
+
+	$order->payment_datetime = $_POST['datetime'];
+	$order->payment_amount = $_POST['amount'];
+	R::store($order);
+	exit();
+
+} else {
+	/*file_put_contents(ROOT . 'yandex-history.php', 'FAILED' . PHP_EOL, FILE_APPEND);*/
+	exit();
+}
 
 ?>
