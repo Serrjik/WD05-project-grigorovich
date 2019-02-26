@@ -93,8 +93,7 @@
 					<input class="input-text" 
 						type="text" 
 						name="phone" 
-						placeholder="Введите телефон" 
-						value="555-55-55" /> <!-- Удалить value после тестирования -->
+						placeholder="Введите телефон" />
 				</label>
 			</div>
 		</div>

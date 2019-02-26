@@ -76,6 +76,60 @@ if ( isset($_POST['textUpdate']) ) {
 
 	}
 
+	// Загрузка файла резюме
+	if ( isset($_FILES['file']['name']) && $_FILES['file']['tmp_name'] != "" ) {
+
+		// Write file image params in variables
+		$fileName = $_FILES['file']['name'];
+		$fileTmpLoc = $_FILES['file']['tmp_name'];
+		$fileType = $_FILES['file']['type'];
+		$fileSize = $_FILES['file']['size'];
+		$fileErrorMsg = $_FILES['file']['error'];
+		$kaboom = explode(".", $fileName);
+		$fileExt = end($kaboom);
+
+		if ( !preg_match("/\.(pdf)$/i", $fileName) ) {
+			$errors[] = [
+				'title' => 'Неверный формат файла', 
+				'desc' => '<p>Файл резюме должен быть в формате pdf.</p>' 
+			];
+		} else if ( $fileSize > 2097152 ) {
+			$errors[] = ['title' => 'Файл не должен быть более 2 Мбайт' ];
+		} else if ( $fileErrorMsg == 1 ) {
+			$errors[] = ['title' => 'При загрузке файла произошла ошибка. Повторите попытку' ];
+		}
+
+		if ( empty($errors) ) {
+			// Перемещаем загруженный файл в нужную директорию
+			// Для имени файла генерируется случайное число
+			$db_file_name = rand(100000000000, 999999999999) . "." . $fileExt; // 9989234798.pdf
+			$postImgFolderLocation = ROOT . 'usercontent/about/'; // usercontent/about/9989234798.pdf
+			$uploadfile = $postImgFolderLocation . $db_file_name;
+			$moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
+
+			// Если резюме уже загружено ранее, то удаляем его файл
+			$resumeFile = $about->resume;
+			if ( $resumeFile != '' ) {
+				$resumeURL = $postImgFolderLocation . $resumeFile; // usercontent/about/9989234798.pdf
+				// Удаляем файл резюме с помощью функции unlink()
+				if ( file_exists($resumeURL) ) {
+					unlink($resumeURL);
+				}
+			}
+
+			if ( $moveResult != true ) {
+				$errors[] = ['title' => 'Ошибка сохранения файла' ];
+			}
+
+			// Пишем в БД имя файла с резюме
+			$about->resume = (@$db_file_name !== NULL ) ? $db_file_name : '';
+			$about->resume_file_name_original = (@$fileName !== NULL ) ? $fileName : '';
+
+		}
+
+	}
+	// - // Загрузка файла резюме
+
 	if ( empty($errors) ) {
 
 		// Создаём таблицу "about" (только для 1-го запуска сайта)

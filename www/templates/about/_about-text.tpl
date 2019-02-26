@@ -23,7 +23,19 @@
 				</div>
 				<div class="about-me-description__content">
 					<?=$about->description?>
+
 				</div>
+
+				<?php if ( $about->resume != '' ): ?>
+					<div class="about-me-description__content mt-20">
+						<a class="mt-20" 
+							href="<?=HOST?>usercontent/about/<?=$about->resume?>" 
+							target="_blank" >
+							Резюме
+						</a>
+					</div>
+				<?php endif ?>
+
 			</div>
 		</div>
 	</div>

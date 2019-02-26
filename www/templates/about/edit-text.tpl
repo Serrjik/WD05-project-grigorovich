@@ -51,6 +51,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="row edit-about-me-form__row">
 						<div class="col">
 							<label class="label">Информация на главной
@@ -63,6 +64,23 @@
 							</label>
 						</div>
 					</div>
+
+					<div class="row edit-about-me-form__row">
+						<div class="col">
+							<div class="load-file-title">Резюме</div>
+							<div class="load-file-opis">PDF-документ весом до 2 Мб.</div>
+							<div class="load-file-fieldset">
+								<input class="inputfile" 
+									id="file" 
+									type="file" 
+									name="file" 
+									data-multiple-caption="{count} файлов выбрано" 
+									multiple="" />
+								<label for="file">Выбрать файл</label><span>Файл не выбран</span>
+							</div>
+						</div>
+					</div>
+
 					<div class="row edit-user-profile-form__row">
 						<div class="form-button-save">
 							<input class="button button-save" 
