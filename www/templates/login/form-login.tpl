@@ -11,7 +11,10 @@
 	<div class="password-remember-wrapper">
 		<div class="registration-form__remember">
 			<label class="form-label">
-				<input class="form-input-checkbox" type="checkbox" name="checkbox" checked="checked" />
+				<input class="form-input-checkbox" 
+					type="checkbox" 
+					name="rememberMe" 
+					checked="checked" />
 				<span class="form__checkbox"></span>Запомнить меня
 			</label>
 		</div>

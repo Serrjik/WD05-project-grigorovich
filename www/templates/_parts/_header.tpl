@@ -1,19 +1,17 @@
-<?php
-
-if ( isset($_SESSION['logged_user']) && $_SESSION['role'] == 'admin' ) {
+<?php if ( isAdmin() ) {
 	include ROOT . 'templates/_parts/_admin-panel.tpl';
-}
-
-?>
+} ?>
 
 <div class="header">
 	<div class="header__left-side">
 		<?php include ROOT . 'templates/_parts/_header-logo.tpl'; ?>
 		<?php include ROOT . 'templates/_parts/_header-nav.tpl'; ?>
 	</div>
+	<!-- Товаров в корзине -->
+	<?php include ROOT . 'templates/_parts/_cart-in-header.tpl'; ?>
 
 	<?php
-	if ( isset($_SESSION['logged_user']) ) {
+	if ( isLoggedIn() ) {
 		
 		// Пользователь на сайте
 		if ( $_SESSION['role'] != 'admin' ) {

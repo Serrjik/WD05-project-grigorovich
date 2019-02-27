@@ -2,17 +2,15 @@
 
 function isAdmin(){
 	$result = false;
-	if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
-		if ($_SESSION['role'] == 'admin') {
-				$result = true;
-		}
+	if (isset($_SESSION['logged_user']) && $_SESSION['role'] == 'admin' ) {
+		$result = true;
 	}
 	return $result;
 }
 
 function isLoggedIn(){
 	$result = false;
-	if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
+	if ( isset($_SESSION['logged_user']) ) {
 		$result = true;
 	}
 	return $result;
@@ -103,6 +101,17 @@ function commentNumber ($num) {
 	echo  $num.' комментари'.$term;
 }
 
+// Функция выводит количество товаров с правильным окончанием
+function goodsNumber($number) {
+
+	if($number == 0) {$term = "ов";}
+	if($number == 1 ) {$term = "";}
+	if($number >= 2 ) {$term = "а";}
+	if($number >= 5 ) {$term = "ов";}
+	echo $number.' товар'.$term;
+
+}
+
 // Adjusting text encoding
 function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
@@ -124,6 +133,43 @@ function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8' ) {
 	$result = mb_substr($temp, 0, $spacePosition, $encoding) . "...";
 	return $result;
 
+}
+
+// Пагинация
+// Функция pagination(количество_результатов_на_страницу, из_какой_таблицы)
+// Возвращает массив из 3-х переменных
+function pagination($results_per_page, $type){
+	$number_of_results = R::count($type);
+
+	// Определяем количество страниц для отображения всех записей
+	// Функция ceil() возвращает следующее наибольшее целочисленное значение, округляя значение в случае необходимости.
+	$number_of_pages = ceil($number_of_results / $results_per_page);
+
+	// Определить на какой странице сейчас пользователь
+	if ( !isset($_GET['page']) ) {
+		$page_number = 1;
+	} else {
+		$page_number = $_GET['page'];
+	}
+
+	// Определяем sql LIMIT - начальное число для отображения результатов на каждой странице
+	$starting_limit_number = ($page_number - 1) * $results_per_page;
+
+	// Получаем выбранные результаты из БД и отображаем их на странице
+	// LIMIT 0,5 - начать с нулевой записи и отобразить 5 записей
+	$sql_pages_limit = 'LIMIT ' . $starting_limit_number . ',' . $results_per_page;
+
+	$result['number_of_pages'] = $number_of_pages; // 3
+	$result['page_number'] = $page_number; // 2
+	$result['sql_pages_limit'] = $sql_pages_limit; // LIMIT 3,3
+
+	return $result;
+}
+// - // Пагинация
+
+function price_format($price){
+	// number_format — Format a number with grouped thousands
+	return number_format($price, 0, '', ' ');
 }
 
 ?>

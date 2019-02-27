@@ -1,13 +1,14 @@
 <?php
 
-// Выведем данные о пользователе
-$details = R::find('about', 1);
+// Получим данные обо мне
+$about = R::findOne('about', 1);
+// Получим данные блога
+$posts = R::find('posts', 'ORDER BY id DESC LIMIT 3');
+$works = R::find('works', 'ORDER BY id DESC LIMIT 3');
 
-$aboutName = $details[1]['name'];
-$aboutDescription = $details[1]['description'];
 
 $title = "Главная";
-$content = "Содержимое главной страницы";
+// $content = "Содержимое главной страницы";
 
 // Готовим контент для центральной части
 ob_start();

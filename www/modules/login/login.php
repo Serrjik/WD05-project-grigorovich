@@ -7,9 +7,6 @@ $pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i';
 
 // Если форма отправлена - то делаем вход
 if ( isset($_POST['login']) ) {
-	// echo "<pre>";
-	// print_r($_POST);
-	// echo "</pre>";
 
 	if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email' ];
@@ -30,8 +27,13 @@ if ( isset($_POST['login']) ) {
 		// test@test.com, password - 1
 		if ( $user ) {
 			if ( password_verify( $_POST['password'], $user->password) ) {
+
 				$_SESSION['logged_user'] = $user;
 				$_SESSION['role'] = $user->role;
+
+				// Сравнение и обновление корзины вынесено в отдельный файл
+				require ROOT . "modules/cart/_cart-update-in-login.php";
+
 				header('Location: ' . HOST);
 				exit();
 			} else {

@@ -2,7 +2,9 @@
 	<div class="user__avatar">
 		<div class="avatar">
 			<?php if ( $_SESSION['logged_user']['avatar_small'] != '' ) { ?>
-				<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" />
+				<img 
+					src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" 
+					alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['surname']?>" />
 			<?php }	?>
 		</div>
 	</div>
@@ -13,6 +15,7 @@
 		</div>
 		<div class="user__buttons">
 			<a class="button button-profile" href="<?=HOST?>profile">Профиль</a>
+			<a class="button button-profile" href="<?=HOST?>myorders">Заказы</a>
 			<a class="button button-profile" href="<?=HOST?>logout">Выход</a>
 		</div>
 	</div>
