@@ -40,7 +40,7 @@
 
 5. В OpenServer в настройках указать версию PHP 7.2 и настроить путь к домену как на скриншоте по ссылке ниже:
 
-[Каталог домена - www](https://yadi.sk/i/W4woHtWyWyVVrQ)
+![Каталог домена - www](http://ipic.su/7yDT64.png)
 
 6. С помощью PhpMyAdmin импортировать БД проекта из файла wd05-project-grigorovich.sql. Данные для подключения к БД находятся в файле config.php.
 
