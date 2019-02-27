@@ -3,7 +3,7 @@
 		<div class="registration-header-wrapper">
 			<div class="logo">
 				<a href="<?=HOST?>" 
-					class="logo__icon">
+					class="logo__icon" >
 					<span class="ml-0"><i class="far fa-paper-plane"></i></span><span>Супер Сайт</span>
 				</a>
 			</div>

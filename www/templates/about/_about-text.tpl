@@ -35,7 +35,7 @@
 						<a class="mt-20" 
 							href="<?=HOST?>usercontent/about/<?=$about->resume?>" 
 							target="_blank" 
-							download="Сергей Григорович - Веб-разработчик" >
+							download="<?=$about->resume_file_name_original?>" >
 							(скачать)
 						</a>
 					</div>

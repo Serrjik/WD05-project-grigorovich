@@ -1,7 +1,7 @@
 <div class="logo-wrapper">
 	<div class="logo">
-		<div class="logo__icon"><span class="ml-0"><i class="far fa-paper-plane"></i></span><span>Digital Lifestyle</span></div>
-		<div class="logo__text"><span>Сайт IT специалиста</span></div>
+		<a href="<?=HOST?>" class="work-logo-icon" ><div class="logo__icon"><span class="ml-0"><i class="far fa-paper-plane"></i></span><span>Digital Lifestyle</span></div>
+			<div class="logo__text"><span>Сайт IT специалиста</span></div></a>
 	</div>
 	<div class="sticky-footer-content">
 		<div class="container user-content pt-85">
