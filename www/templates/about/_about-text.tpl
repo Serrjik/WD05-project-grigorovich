@@ -31,7 +31,12 @@
 						<a class="mt-20" 
 							href="<?=HOST?>usercontent/about/<?=$about->resume?>" 
 							target="_blank" >
-							Резюме
+							Резюме</a>&nbsp;
+						<a class="mt-20" 
+							href="<?=HOST?>usercontent/about/<?=$about->resume?>" 
+							target="_blank" 
+							download="Сергей Григорович - Веб-разработчик" >
+							(скачать)
 						</a>
 					</div>
 				<?php endif ?>
