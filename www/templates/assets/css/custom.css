@@ -46,7 +46,8 @@ body::before {
 	color: #38505e !important;
 }
 
-.logo__icon {
+.logo__icon,
+.work-logo-icon {
 	text-decoration: none;
 }
 
