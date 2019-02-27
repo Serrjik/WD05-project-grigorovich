@@ -21,7 +21,10 @@
 		<?php endforeach ?>
 	</div>
 
-	<div class="row mb-50">
-		<?php require ROOT . "templates/_parts/_pagination.tpl" ?>
-	</div>
+	<?php if ( $pagination['number_of_pages'] > 1 ): ?>
+		<div class="row mb-50">
+			<?php require ROOT . "templates/_parts/_pagination.tpl" ?>
+		</div>
+	<?php endif ?>
+
 </div>
