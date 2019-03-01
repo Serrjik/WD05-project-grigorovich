@@ -5,6 +5,16 @@ require "db.php";
 require ROOT . "libs/functions.php";
 session_start();
 
+// Проверяем существование Токена для "Запомнить меня"
+if ( isset($_COOKIE['password_cookie_token']) && !empty($_COOKIE['password_cookie_token']) ) {
+	$user  = R::findOne( 'users', 'password_cookie_token = ? ', array($_COOKIE['password_cookie_token']) );
+	if ( $user ) {
+		$_SESSION['logged_user'] = $user;
+		$_SESSION['role'] = $user->role;
+	}
+}
+
+
 $errors = array();
 $success = array();
 
