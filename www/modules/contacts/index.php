@@ -78,6 +78,8 @@ if ( isset($_POST['newMessage'])) {
 		$message->name = htmlentities($_POST['name']);
 		$message->message = htmlentities($_POST['message']);
 		$message->dateTime = R::isoDateTime();
+		$message->readStatus = 'unread';
+
 		$message->message_file_name_original = (@$fileName !== NULL ) ? $fileName : '';
 		$message->message_file = (@$db_file_name !== NULL ) ? $db_file_name : '';
 

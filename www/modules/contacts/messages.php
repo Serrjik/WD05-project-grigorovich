@@ -4,6 +4,9 @@ $title = "Контакты";
 
 $messages = R::find('messages', 'ORDER BY id DESC');
 
+R::exec('UPDATE messages SET read_status = "read" WHERE read_status = "unread" ');
+$unreadMessages = 0;
+
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';

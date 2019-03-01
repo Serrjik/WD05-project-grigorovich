@@ -14,6 +14,8 @@ if ( isset($_COOKIE['password_cookie_token']) && !empty($_COOKIE['password_cooki
 	}
 }
 
+// Проверка новых сообщений
+$unreadMessages = R::count( 'messages', ' read_status LIKE ? ', [ 'unread' ] );
 
 $errors = array();
 $success = array();

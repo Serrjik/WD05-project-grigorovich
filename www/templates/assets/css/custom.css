@@ -399,3 +399,20 @@ a.card__select {
 }
 
 /* END - Cart */
+
+.admin-panel-menu__link {
+	position: relative;
+}
+
+.badge--notification {
+	position: absolute;
+	left: 10px;
+	top: -5px;
+	background-color: #dc143c;
+	color: #FFF;
+	padding: 3px;
+	font-size: 11px;
+	line-height: 1;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+}
