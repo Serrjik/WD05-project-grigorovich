@@ -9,7 +9,7 @@
 	<?php endif ?>
 	<!-- Скрипт для отображения имени файла прикрепленной картинки -->
 	<?php if ( (@$_SERVER['REDIRECT_URL'] == '/profile-edit') 
-		|| (@$_SERVER['REDIRECT_URL'] == '/blog/post-new') 
+		// || (@$_SERVER['REDIRECT_URL'] == '/blog/post-new') 
 		|| (@$_SERVER['REDIRECT_URL'] == '/blog/post-edit') 
 		|| (@$_SERVER['REDIRECT_URL'] == '/contacts') 
 		|| (@$_SERVER['REDIRECT_URL'] == '/edit-text') 
@@ -19,6 +19,12 @@
 		|| (@$_SERVER['REDIRECT_URL'] == '/shop/item-edit') ): ?>
 		<script src="<?=HOST?>templates/assets/js/custom-file-input.js"></script>
 	<?php endif ?>
+
+	<!-- Скрипт для отображения миниатюры прикрепленной картинки при создании поста в блоге -->
+	<?php if ( (@$_SERVER['REDIRECT_URL'] == '/blog/post-new') ): ?>
+		<script src="<?=HOST?>templates/assets/js/fileUploadPreview.js"></script>
+	<?php endif ?>
+
 	<!-- Скрипт для проверки поля ввода формы восстановления пароля -->
 	<?php if ( @$_SERVER['REDIRECT_URL'] == '/set-new-password'): ?>
 		<script src="<?=HOST?>templates/assets/js/check-setNewPasswordForm.js"></script>

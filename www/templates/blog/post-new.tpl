@@ -27,7 +27,18 @@
 					<div class="load-file-opis">Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.</div>
 					<div class="load-file-fieldset">
 						<input class="inputfile" id="file-2" type="file" name="postImg" data-multiple-caption="{count} файлов выбрано" multiple="" />
-						<label for="file-2">Выбрать файл</label><span>Файл не выбран</span>
+						<label for="file-2">Выбрать файл</label><span id="file-caption" >Файл не выбран</span>
+					</div>
+					<div class="load-file-wrap" id="imgPreviewBlock" style="display: none;" >
+						<div class="load-file-wrap-img">
+							<img class="load-file-wrap-img__image" 
+								id="image_preview" 
+								src="" 
+								alt="Загружаемое изображение" />
+						</div>
+						<div class="load-file-wrap__button">
+							<a id="delPreview" class="button button-delete button-small" href="#!">Удалить</a>
+						</div>
 					</div>
 				</div>
 				<div class="post-add-form__textarea">
