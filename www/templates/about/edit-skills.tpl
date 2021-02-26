@@ -38,6 +38,7 @@
 					<div class="row technology-edit-form__row">
 						<?=skillItem('php', 'PHP');?>
 						<?=skillItem('mysql', 'MySql');?>
+						<?=skillItem('nodejs', 'Node.js');?>
 					</div>
 
 					<div class="row technology-edit-form__row mb-30">

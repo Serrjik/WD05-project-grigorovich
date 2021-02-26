@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'WD05-project-grigorovich');
 define('DB_USER', 'root');
-define('DB_PASS', 'root');
+define('DB_PASS', '');
 
 // SITE SETTINGS FOR EMAILS
 define('SITE_NAME', 'Сайт портфолио - Сергей Григорович');

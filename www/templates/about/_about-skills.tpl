@@ -57,6 +57,7 @@
 				<div class="col-md-9">
 					<?=showIndicator('PHP', $skills['php'], 'blue');?>
 					<?=showIndicator('MySql', $skills['mysql'], 'blue');?>
+					<?=showIndicator('Node.js', $skills['nodejs'], 'blue');?>
 				</div>
 			</div>
 			<div class="row">

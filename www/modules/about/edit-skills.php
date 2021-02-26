@@ -36,6 +36,7 @@ if ( isset($_POST['skillsUpdate']) ) {
 		$skills->jquery = htmlentities(intval(trim($_POST['jquery'])));
 		$skills->php = htmlentities(intval(trim($_POST['php'])));
 		$skills->mysql = htmlentities(intval(trim($_POST['mysql'])));
+		$skills->nodejs = htmlentities(intval(trim($_POST['nodejs'])));
 		$skills->git = htmlentities(intval(trim($_POST['git'])));
 		$skills->gulp = htmlentities(intval(trim($_POST['gulp'])));
 		$skills->npm = htmlentities(intval(trim($_POST['npm'])));
