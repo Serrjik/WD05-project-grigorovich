@@ -23,7 +23,7 @@ if ( isset($_POST['workNew']) ) {
 		$errors[] = ['title' => 'Введите технологии, использованные в работе' ];
 	}
 
-	if ( trim($_POST['link']) == '' ) {
+	if ( trim($_POST['linkToProject']) == '' ) {
 		$errors[] = ['title' => 'Введите ссылку на проект' ];
 	}
 
