@@ -5,30 +5,30 @@ if ( !isAdmin() ) {
 	die();
 }
 
-$title = "Удалить пост";
+$title = "Удалить работу";
 
-$post = R::load('posts', $_GET['id']);
+$work = R::load('works', $_GET['id']);
 
-if ( isset($_POST['postDelete']) ) {
+if ( isset($_POST['workDelete']) ) {
 
-	$postImgFolderLocation = ROOT . 'usercontent/blog/'; // usercontent/blog/9989234798.jpg
+	$workImgFolderLocation = ROOT . 'usercontent/portfolio/'; // usercontent/portfolio/9989234798.jpg
 
-	// Если картинка в блоге установлена, то удаляем её файл
-	$postImg = $post->post_img;
-	if ( $postImg != '' ) {
-		$picurl = $postImgFolderLocation . $postImg; // usercontent/blog/foto.jpg
-		$picurl320 = $postImgFolderLocation . "320-" . $postImg; // usercontent/blog/320-foto.jpg
-		// Удаляем картинку блога с помощью функции unlink()
+	// Если картинка работы установлена, то удаляем её файл
+	$workImg = $work->work_image;
+	if ( $workImg != '' ) {
+		$picurl = $workImgFolderLocation . $workImg; // usercontent/portfolio/foto.jpg
+		$picurl360 = $workImgFolderLocation . "360-" . $workImg; // usercontent/portfolio/360-foto.jpg
+		// Удаляем картинку работы с помощью функции unlink()
 		if ( file_exists($picurl) ) {
 			unlink($picurl);
 		}
-		if ( file_exists($picurl320) ) {
-			unlink($picurl320);
+		if ( file_exists($picurl360) ) {
+			unlink($picurl360);
 		}
 	}
 
-	R::trash($post);
-	header('Location: ' . HOST . "blog?result=postDeleted");
+	R::trash($work);
+	header('Location: ' . HOST . "portfolio?result=workDeleted");
 	exit();
 
 }
@@ -36,7 +36,7 @@ if ( isset($_POST['postDelete']) ) {
 // Готовим контент для центральной части
 ob_start();
 include ROOT . 'templates/_parts/_header.tpl';
-require ROOT . "templates/blog/post-delete.tpl";
+require ROOT . "templates/portfolio/work-delete.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

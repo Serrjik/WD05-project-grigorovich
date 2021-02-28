@@ -105,9 +105,9 @@ switch ( $uri[0] ) {
 		include ROOT . "modules/portfolio/work-edit.php";
 		break;
 
-	// case 'portfolio/work-delete':
-	// 	include ROOT . "modules/portfolio/work-delete.php";
-	// 	break;
+	case 'portfolio/work-delete':
+		include ROOT . "modules/portfolio/work-delete.php";
+		break;
 
 	case 'portfolio/work':
 		include ROOT . "modules/portfolio/work.php";

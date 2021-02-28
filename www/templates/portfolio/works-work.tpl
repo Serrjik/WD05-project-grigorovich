@@ -25,6 +25,7 @@
 						<?php if ( isAdmin() ) { ?>
 							<div class="blog-post__button">
 								<a class="button button-edit" href="<?=HOST?>portfolio/work-edit?id=<?=$work['id']?>" >Редактировать</a>
+								<a class="button button-delete" href="<?=HOST?>portfolio/work-delete?id=<?=$work['id']?>" >Удалить</a>
 							</div>
 						<?php } ?>
 					</div>
