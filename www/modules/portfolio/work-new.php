@@ -40,7 +40,7 @@ if ( isset($_POST['workNew']) ) {
 		$work->technology = trim($_POST['technology']);
 		$work->authorId = $_SESSION['logged_user']['id'];
 		$work->dateTime = R::isoDateTime();
-		$work->link = trim($_POST['linkToProject']);
+		$work->linkToProject = trim($_POST['linkToProject']);
 		$work->github = trim($_POST['linkToGithub']);
 
 		// Сохранение изображения работы
