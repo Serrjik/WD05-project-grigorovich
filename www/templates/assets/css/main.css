@@ -143,11 +143,11 @@ hr,
   flex: 1;
 }
 body {
-  min-width: 1200px;
+  /* min-width: 1200px; */
 }
 .container {
-  width: 1140px;
-  min-width: 1140px;
+  /* width: 1140px; */
+  /* min-width: 1140px; */
 }
 .body--dashboard {
   padding-left: 330px;
@@ -1590,10 +1590,16 @@ a.message-author--email {
 .login a {
   color: #fefefe;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 26px;
+  font-weight: 600;
   line-height: 1;
   text-decoration: underline;
+}
+@media(min-width:500px) {
+  .login a {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 .user-comment {
   padding: 17.5px 20px;
