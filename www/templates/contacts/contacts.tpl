@@ -22,22 +22,22 @@
 						<div class="col-4 contacts__name"><?=$title?></div>
 						<div class="col-6 contacts__value contacts__value--link">
 							<?php if ( $name == 'email' ): ?>
-								<a href="mailto:<?=$contacts[$name]?>" 
+								<a href="mailto:<?=$contacts[$name]?>"
 									target="_blank" >
 									<?=$contacts[$name]?>
 								</a>
 							<?php elseif ( $name == 'phone' ): ?>
-								<a href="tel:<?=$contacts[$name]?>" 
+								<a href="tel:<?=$contacts[$name]?>"
 									target="_blank" >
 									<?=$contacts[$name]?>
 								</a>
 							<?php elseif ( $name == 'skype' ): ?>
-								<a href="skype:<?=$contacts[$name]?>?chat" 
+								<a href="skype:<?=$contacts[$name]?>?chat"
 									target="_blank" >
 									<?=$contacts[$name]?>
 								</a>
 							<?php elseif ( $name == 'github' ): ?>
-								<a class="contacts__value--bold-link" href="<?=$contacts[$name]?>" 
+								<a class="contacts__value--bold-link" href="<?=$contacts[$name]?>"
 									target="_blank" >
 									<?=$contacts[$name]?>
 								</a>
@@ -100,41 +100,42 @@
 			<form class="form-contact" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data" novalidate >
 				<div class="form-contact__title">Связаться со мной</div>
 				<div class="form-contact__name">
-					<input name="name" 
-						class="input-text" 
-						type="text" 
+					<input name="name"
+						class="input-text"
+						type="text"
 						placeholder="Введите имя"
 						value="<?=(trim(@$_POST['name']) != '' ) ? $_POST['name'] : '';?>" />
 				</div>
 				<div class="form-contact__email">
-					<input name="email" 
-						class="input-text" 
-						type="email" 
-						placeholder="Email" 
+					<input name="email"
+						class="input-text"
+						type="email"
+						placeholder="Email"
 						value="<?=(trim(@$_POST['email']) != '' ) ? $_POST['email'] : '';?>" />
 				</div>
 				<div class="form-contact__message">
-					<textarea name="message" 
-						class="textarea" 
-						type="text" 
+					<textarea name="message"
+						class="textarea"
+						type="text"
 						placeholder="Сообщение"><?=(trim(@$_POST['message']) != '' ) ? $_POST['message'] : '';?></textarea>
 				</div>
 				<div class="form-contact__load-file">
 					<div class="load-file-title">Прикрепить файл </div>
 					<div class="load-file-opis">jpg, png, pdf, doc, docx весом до 2Мб.</div>
 					<div class="load-file-fieldset">
-						<input class="inputfile inputfile-rad" 
-							id="file" 
-							type="file" 
-							name="file" 
-							data-multiple-caption="{count} файлов выбрано" 
+						<input class="inputfile inputfile-rad"
+							id="file"
+							type="file"
+							name="file"
+							data-multiple-caption="{count} файлов выбрано"
 							multiple="" />
 						<label for="file">Выбрать файл</label><span>Файл не выбран</span></div>
 				</div>
+				<div class="g-recaptcha" data-sitekey="6LcVbW0aAAAAABO7gP4bUshJB-lZx_Na7eWiy2kU" style="margin-bottom:15px;"></div>
 				<div class="form-contact__save">
-					<input class="button button-save" 
-						type="submit" 
-						value="Отправить" 
+					<input class="button button-save"
+						type="submit"
+						value="Отправить"
 						name="newMessage" />
 				</div>
 			</form>
