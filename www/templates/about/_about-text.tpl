@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<?php if ( $about->photo != '' ): ?>
-				<div class="about-me__avatar">
+				<div class="about-me__avatar mb-2 mb-md-0">
 					<div class="avatar avatar--big">
 						<img src="<?=HOST?>usercontent/about/<?=$about->photo?>" />
 					</div>
