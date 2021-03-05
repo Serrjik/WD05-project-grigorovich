@@ -1,4 +1,4 @@
-<div id="jobs" class="container user-content pb-85">
+<div id="jobs" class="container user-content pb-30 pb-lg-5">
 	<div class="row mb-35">
 		<div class="col-md-9 offset-md-3">
 			<div class="work-experience">

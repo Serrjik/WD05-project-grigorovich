@@ -37,6 +37,7 @@
 
 					<div class="row technology-edit-form__row">
 						<?=skillItem('php', 'PHP');?>
+						<?=skillItem('wp', 'WordPress');?>
 						<?=skillItem('mysql', 'MySql');?>
 						<?=skillItem('nodejs', 'Node.js');?>
 					</div>

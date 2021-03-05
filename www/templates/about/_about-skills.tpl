@@ -44,7 +44,7 @@
 			</div>
 
 			<div class="row mb-40">
-				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Frontend</div>
+				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center mb-20 mb-md-0">Frontend</div>
 				<div class="indicators-wrapper col-md-9">
 					<?=showIndicator('HTML5', $skills['html'], 'green');?>
 					<?=showIndicator('CSS3', $skills['css'], 'green');?>
@@ -53,15 +53,16 @@
 				</div>
 			</div>
 			<div class="row mb-40">
-				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Backend</div>
+				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center mb-20 mb-md-0">Backend</div>
 				<div class="indicators-wrapper col-md-9">
 					<?=showIndicator('PHP', $skills['php'], 'blue');?>
+					<?=showIndicator('WordPress', $skills['wp'], 'blue');?>
 					<?=showIndicator('MySql', $skills['mysql'], 'blue');?>
 					<?=showIndicator('Node.js', $skills['nodejs'], 'blue');?>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center">Workflow</div>
+				<div class="col-md-3 technology__title d-flex align-items-center justify-content-center mb-20 mb-md-0">Workflow</div>
 				<div class="indicators-wrapper col-md-9">
 					<?=showIndicator('Git', $skills['git'], 'yellow');?>
 					<?=showIndicator('Gulp', $skills['gulp'], 'yellow');?>

@@ -828,21 +828,20 @@ a.badge:active {
 .indicator {
   position: relative;
   display: inline-block;
-  margin-right: 40px;
-  /* margin-right: 0; */
   margin-bottom: 20px;
 }
-.indicator:last-child {
-  margin-right: 0;
+@media(min-width: 360px){
+  .indicator {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 }
 @media(min-width: 992px){
   .indicator {
-    /* margin-right: 40px; */
+    margin-right: 40px;
+    margin-left: 0;
     margin-bottom: 0;
   }
-}
-.row.ml-50.pt-50 .indicator:last-child {
-  margin-right: 0px;
 }
 .indicator__value {
   position: absolute;
@@ -1508,7 +1507,6 @@ a.message-author--email {
   color: #383737;
 }
 .footer {
-  height: 305px;
   width: 100%;
   background-color: #252525;
   padding-top: 60px;
@@ -1522,6 +1520,14 @@ a.message-author--email {
   -webkit-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+}
+.footer__text {
+  text-align: center;
+}
+@media(min-width: 576px) {
+  .footer__text {
+    text-align: left;
+  }
 }
 .footer__text p {
   margin: 0;
@@ -1555,16 +1561,23 @@ a.message-author--email {
   text-decoration: none;
   color: #ffe400;
 }
+.footer__social-icons {
+  font-size: 0;
+}
 .footer__social-icons a {
+  display: inline-block;
   font-size: 32px;
   color: #fff;
   margin-right: 35px;
+  margin-bottom: 20px;
+}
+@media (min-width: 576px) {
+  .footer__social-icons a:last-child {
+    margin-right: 0;
+  }
 }
 .footer__social-icons a:hover {
   color: #ffe400;
-}
-.footer__social-icons a:last-child {
-  margin-right: 0;
 }
 .registration-wrapper {
   display: -webkit-box;
@@ -1960,7 +1973,7 @@ a.message-author--email {
 .indicators-wrapper {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 @media(min-width: 992px){
   .indicators-wrapper {
@@ -1969,11 +1982,22 @@ a.message-author--email {
   }
 }
 .work-experience-block {
-  padding-top: 80px;
+  padding-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
+  flex-direction: column-reverse;
+}
+@media(min-width: 500px) {
+  .work-experience-block {
+    flex-direction: row;
+  }
+}
+@media(min-width: 768px) {
+  .work-experience-block {
+    padding-top: 80px;
+  }
 }
 .work-experience-block__title {
   font-size: 28px;
