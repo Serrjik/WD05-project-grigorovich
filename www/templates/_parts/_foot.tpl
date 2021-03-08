@@ -33,7 +33,7 @@
 	<?php if ( @$_SERVER['REDIRECT_URL'] == '/blog/post'): ?>
 		<script src="<?=HOST?>templates/assets/js/check-leaveCommentForm.js"></script>
 	<?php endif ?>
-	<!-- Скрипты для подключения карты и Google reCAPTCHA v3 -->
+	<!-- Скрипты для подключения карты и Google reCAPTCHA v2 -->
 	<?php if ( @$_SERVER['REDIRECT_URL'] == '/contacts'): ?>
 		<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script>
 

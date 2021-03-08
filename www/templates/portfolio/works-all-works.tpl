@@ -14,7 +14,7 @@
 		<?php } ?>
 	</div>
 
-	<div class="row">
+	<div class="row justify-content-around pr-15 pr-sm-0 pl-15 pl-sm-0">
 		<?php foreach ($works as $work): ?>
 			<!-- Карточка работы -->
 			<?php require ROOT . "templates/_parts/_portfolio-card.tpl" ?>

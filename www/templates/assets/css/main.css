@@ -237,6 +237,7 @@ input {
   outline: none;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   border-radius: 22px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -670,16 +671,21 @@ a.title-medium,
 }
 .card-portfolio {
   position: relative;
-  width: 360px;
-  height: 315px;
+  max-width: 360px;
+  height: 345px;
   padding: 0;
   -webkit-box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
   box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
   border-radius: 6px;
   background-color: #fff;
 }
-.card-portfolio__image {
-  width: 360px;
+@media(min-width: 400px) {
+  .card-portfolio {
+    height: 315px;
+  }
+}
+.card-portfolio__image-holder {
+  max-width: 360px;
   height: 190px;
   border-radius: 6px;
   background-color: #000000;
@@ -687,6 +693,10 @@ a.title-medium,
   background-image: -webkit-linear-gradient(bottom, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
   background-image: -o-linear-gradient(bottom, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to top, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.card-portfolio__image {
+  height: 100%;
+  object-fit: cover;
 }
 .card-post .button,
 .card-portfolio .button {
@@ -792,11 +802,17 @@ a.title-medium,
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  padding: 40px 50px 30px;
+  padding: 40px 15px 30px;
   background-image: url("../img/bg/header-bg-main.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+@media (min-width: 380px) {
+  .header {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 }
 a.badge {
   text-decoration: none;
@@ -1003,7 +1019,10 @@ svg {
   display: inline-block;
 }
 .logo__icon {
+  display: flex;
   margin-bottom: 16px;
+  margin-right: 20px;
+  line-height: 1.5;
 }
 .logo__icon img {
   display: inline;
