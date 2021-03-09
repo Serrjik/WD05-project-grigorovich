@@ -2,8 +2,8 @@
 
 	<?php if ( isAdmin() ): ?>
 		<div class="row">
-			<div class="col contacts-links">
-				<div class="contacts-links__button"><a class="button button-edit" href="<?=HOST?>contacts-edit">Редактировать</a></div>
+			<div class="col contacts-links flex-column flex-sm-row align-items-center">
+				<div class="contacts-links__button mb-25 mb-sm-0"><a class="button button-edit" href="<?=HOST?>contacts-edit">Редактировать</a></div>
 				<div class="contacts-links__button"><a class="button" href="<?=HOST?>messages">Сообщения</a></div>
 			</div>
 		</div>

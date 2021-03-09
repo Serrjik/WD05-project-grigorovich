@@ -643,16 +643,33 @@ a.title-medium,
 }
 .card-post {
   position: relative;
-  width: 360px;
-  height: 308px;
+  max-width: 360px;
+  height: 330px;
   padding: 20px;
   -webkit-box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
   box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
   border-radius: 6px;
   background-color: #fff;
 }
-.card-post__image {
-  width: 320px;
+@media(min-width: 330px) {
+	.card-post {
+    height: 308px;
+	}
+}
+@media(min-width: 768px) {
+	.card-post:nth-child(odd) {
+		margin-right: 30px;
+		margin-left: 30px;
+	}
+}
+@media(min-width: 992px) {
+	.card-post:nth-child(odd) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+.card-post__image-holder {
+  max-width: 320px;
   height: 140px;
   border-radius: 6px;
   background-color: #222222;
@@ -660,6 +677,10 @@ a.title-medium,
   background-image: -webkit-linear-gradient(bottom, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
   background-image: -o-linear-gradient(bottom, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to top, rgba(23, 46, 103, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.card-post__image {
+  height: 100%;
+  object-fit: cover;
 }
 .card-post__title,
 .card-portfolio__title {
@@ -698,11 +719,22 @@ a.title-medium,
   height: 100%;
   object-fit: cover;
 }
-.card-post .button,
+/* .card-post .button, */
 .card-portfolio .button {
   position: absolute;
   bottom: 20px;
   left: 20px;
+}
+.card-post__button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+@media(min-width: 350px) {
+  .card-post__button {
+    right: auto;
+    left: 20px;
+  }
 }
 .avatar {
   width: 48px;
@@ -1725,6 +1757,7 @@ a.message-author--email {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  /* flex-direction: column-reverse; */
   justify-content: space-between;
 }
 .blog__header span {
@@ -2259,6 +2292,9 @@ a.message-author--email {
 }
 .edit-about-me__avatar .avatar img {
   min-width: 100%;
+}
+.g-recaptcha * {
+  /* max-width: auto !important; */
 }
 .mt-0 {
   margin-top: 0;
