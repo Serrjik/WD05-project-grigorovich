@@ -6,7 +6,7 @@
 		</div>
 	</a>
 	<div class="sticky-footer-content">
-		<div class="container user-content pt-85">
+		<div class="container user-content pt-20 pt-md-5">
 			<div class="row">
 				<div class="blog-post col-md-10 offset-md-1 pl-0 pr-0">
 					<div class="blog-post-heading-wrapper">
@@ -39,7 +39,7 @@
 </div>
 <div class="description-progect mt-20">
 	<div class="container user-content">
-		<div class="row">
+		<div class="row pr-15 pr-sm-0 pl-15 pl-sm-0">
 			<div class="col-md-5 offset-md-1 pl-0 description-about">
 				<h3 class="title-3">Кратко о проекте</h3>
 				<div class="description-about__paragraph description-about__paragraph--style">
