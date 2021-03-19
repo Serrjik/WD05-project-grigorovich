@@ -17,14 +17,14 @@
 <?php } ?>
 
 <div class="sticky-footer-content">
-	<div class="container user-content pt-45 pl-0">
+	<div class="container user-content pt-45">
 		<div class="row">
 			<div class="offset-md-1 col-md-8">
 				<h1 class="title-1">Редактировать - Технологии</h1>
 
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 
-				<form class="technology-edit-form" 
+				<form class="technology-edit-form pl-15 pl-sm-0" 
 					action="<?=HOST?>edit-skills" 
 					method="POST" >
 

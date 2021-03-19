@@ -336,10 +336,12 @@ input {
   border: 0;
   background-color: #f29a00;
 }
+.blog__buttons-wrapper .button-edit,
 .blog-post__button .button-edit {
   margin-bottom: 20px;
 }
 @media(min-width: 340px) {
+  .blog__buttons-wrapper .button-edit,
   .blog-post__button .button-edit {
     margin-bottom: 0;
   }
@@ -1171,6 +1173,11 @@ svg {
     max-width: 510px;
   }
 }
+@media(min-width: 992px) {
+  .blog-post__title--one-post {
+    max-width: 480px;
+  }
+}
 h1.blog-post__title {
   margin-bottom: 10px;
 }
@@ -1994,10 +2001,6 @@ a.message-author--email {
 .contacts-edit-form__row {
   margin-bottom: 27px;
 }
-.form-button-save {
-  margin-left: 15px;
-  margin-right: 20px;
-}
 .about-me__avatar {
   /* margin-right: 0; */
 }
@@ -2287,11 +2290,15 @@ a.message-author--email {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.blog__button--edit {
-  position: absolute;
-  top: 27px;
-  right: 0;
+.blog__buttons-wrapper {
   z-index: 1;
+}
+@media(min-width: 992px) {
+  .blog__buttons-wrapper {
+    position: absolute;
+    top: 27px;
+    right: 0;
+  }
 }
 .make-relative {
   position: relative;
@@ -2302,10 +2309,6 @@ a.message-author--email {
 }
 .edit-user-profile-form__row {
   margin-bottom: 27px;
-}
-.form-button-save {
-  margin-left: 15px;
-  margin-right: 20px;
 }
 .works-add-form {
   padding-top: 5px;
@@ -2337,6 +2340,17 @@ a.message-author--email {
 .form-button-save {
   margin-left: 15px;
   margin-right: 20px;
+}
+.edit-user-profile-form__row .form-button-save {
+  margin-bottom: 20px;
+}
+@media(min-width: 340px) {
+  .edit-user-profile-form__row .form-button-save {
+    margin-bottom: 0;
+  }
+}
+.form-button-cancel {
+  margin-left: 15px;
 }
 .edit-about-me__avatar .avatar {
   width: 83.9px;

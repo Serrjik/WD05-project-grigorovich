@@ -1,15 +1,15 @@
 <div class="container user-content pt-70 make-relative">
 	<div class="row">
-		<div class="col-10 offset-1">
+		<div class="col-lg-10 offset-lg-1">
 		<?php if ( isAdmin() ) { ?>
-			<div class="blog__button--edit">
+			<div class="blog__buttons-wrapper">
 				<a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" />Редактировать</a>
 				<a class="button button-delete" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>" />Удалить</a>
 			</div>
 		<?php } ?>
 			<div class="blog-post">
 				<div class="blog-post-heading-wrapper">
-					<h1 class="blog-post__title title-1"><?=$post['title']?></h1>
+					<h1 class="blog-post__title blog-post__title--one-post title-1"><?=$post['title']?></h1>
 					<div class="blog-post__info">
 						<div class="blog-post__info-name"><?=$post['name']?> <?=$post['surname']?></div>
 						<div class="blog-post__info-category"><a href="#!"><?=$post['cat_title']?></a></div>
