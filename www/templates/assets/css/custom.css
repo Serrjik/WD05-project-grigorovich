@@ -114,10 +114,6 @@ input[data-skill][type="number"]:valid+span:after {
 	cursor: auto;
 }
 
-.logo-wrapper {
-	height: auto;
-}
-
 .footer {
 	padding-bottom: 60px;
 }
