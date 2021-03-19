@@ -10,6 +10,12 @@
 			<div class="row">
 				<div class="blog-post col-md-10 offset-md-1 pl-0 pr-0">
 					<div class="blog-post-heading-wrapper">
+						<?php if ( isAdmin() ) { ?>
+							<div class="blog-post__button">
+								<a class="button button-edit" href="<?=HOST?>portfolio/work-edit?id=<?=$work['id']?>" >Редактировать</a>
+								<a class="button button-delete" href="<?=HOST?>portfolio/work-delete?id=<?=$work['id']?>" >Удалить</a>
+							</div>
+						<?php } ?>
 						<h1 class="blog-post__title title-1 blog-post__title--size"><?=$work['title']?></h1>
 						<div class="blog-post__info mb-45">
 							<div class="blog-post__info-name"><?=$author['name']?></div>
@@ -22,12 +28,6 @@
 								<?php endif ?>
 							</div>
 						</div>
-						<?php if ( isAdmin() ) { ?>
-							<div class="blog-post__button">
-								<a class="button button-edit" href="<?=HOST?>portfolio/work-edit?id=<?=$work['id']?>" >Редактировать</a>
-								<a class="button button-delete" href="<?=HOST?>portfolio/work-delete?id=<?=$work['id']?>" >Удалить</a>
-							</div>
-						<?php } ?>
 					</div>
 					<div>
 						<img class="blog-post__image" src="<?=HOST?>usercontent/portfolio/<?=$work['work_image']?>" alt="<?=$work['title']?>" />
