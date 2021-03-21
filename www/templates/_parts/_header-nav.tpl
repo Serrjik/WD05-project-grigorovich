@@ -1,4 +1,4 @@
-<div class="header__nav ml-55">
+<div class="header__nav">
 	<nav class="navigation">
 		<ul>
 			<li class="navigation__item mb-3 mb-lg-0 <?=($uri[0] == "") ? "navigation__item--active" : ""?>"><a href="<?=HOST?>">Главная</a></li>

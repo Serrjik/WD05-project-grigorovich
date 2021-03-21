@@ -1,7 +1,7 @@
 <?php function skillItem($name, $title) {
 	global $skills; ?>
-	<div class="col-md-3 technology-edit-form__item">
-		<label class="label"><?=$title?>
+	<div class="col-sm-6 col-md-3 technology-edit-form__item">
+		<label class="label technology-edit-form__label"><?=$title?>
 			<input class="input-text input-text--width" 
 				type="number" 
 				min="0" 
@@ -17,9 +17,9 @@
 <?php } ?>
 
 <div class="sticky-footer-content">
-	<div class="container user-content pt-45">
+	<div class="container user-content pt-20 pt-sm-5">
 		<div class="row">
-			<div class="offset-md-1 col-md-8">
+			<div class="offset-lg-1 col-lg-8">
 				<h1 class="title-1">Редактировать - Технологии</h1>
 
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>

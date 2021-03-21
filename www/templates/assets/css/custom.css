@@ -277,11 +277,16 @@ input[data-skill][type="number"]:valid+span:after {
 	position: absolute;
 	z-index: 5;
 	right: 0;
-	top: 50px;
+	top: 40px;
 	font-size: 14px;
 	padding: 10px 20px;
 	background-color: #FFF;
 	text-decoration: none;
+}
+@media(min-width: 992px) {
+	.cart {
+		top: 50px;
+	}
 }
 
 .cart a {
