@@ -856,6 +856,20 @@ a.title-medium,
     padding-left: 50px;
   }
 }
+.header__nav {
+  margin-left: 0;
+  max-width: 150px;
+}
+@media(min-width: 350px) {
+  .header__nav {
+    max-width: unset;
+  }
+}
+@media(min-width: 500px) {
+  .header__nav {
+    margin-left: 55px;
+  }
+}
 a.badge {
   text-decoration: none;
   cursor: pointer;
@@ -1078,8 +1092,13 @@ svg {
   color: #fff;
 }
 .logo__text {
-  margin-left: 55px;
+  margin-left: 40px;
   color: #81c5ee;
+}
+@media(min-width: 500px) {
+  .logo__text {
+    margin-left: 55px;
+  }
 }
 .sign-in-guest {
   display: inline-block;
@@ -2178,10 +2197,17 @@ a.message-author--email {
   margin-bottom: 20px;
 }
 .technology-edit-form {
-  margin-top: 35px;
-  margin-bottom: 120px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+@media(min-width: 576px) {
+  .technology-edit-form {
+    margin-top: 35px;
+    margin-bottom: 120px;
+  }
 }
 .technology-edit-form__item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2191,23 +2217,34 @@ a.message-author--email {
 .technology-edit-form__item:first-child {
   padding-left: 15px;
 }
-.technology-edit-form__row {
-  margin-bottom: 37px;
+.technology-edit-form__label {
+  display: flex !important;
+}
+@media(min-width: 768px) {
+  .technology-edit-form__row {
+    margin-bottom: 37px;
+  }
 }
 .percent-sign {
-  position: relative;
-}
-.percent-sign__item {
   position: absolute;
-  bottom: 15px;
+  width: 16px;
+  height: 16px;
+  left: 130px;
+  bottom: 40%;
 }
 .input-text--width {
   width: 100px;
   margin-right: 5px;
 }
 .technology-edit-form__button {
-  margin-left: 15px;
   margin-right: 20px;
+  margin-bottom: 20px;
+}
+@media(min-width: 340px) {
+  .technology-edit-form__button {
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
 }
 .contacts-links {
   margin-bottom: 30px;
@@ -2358,9 +2395,6 @@ a.message-author--email {
 }
 .edit-about-me__avatar .avatar img {
   min-width: 100%;
-}
-.g-recaptcha * {
-  /* max-width: auto !important; */
 }
 .mt-0 {
   margin-top: 0;
