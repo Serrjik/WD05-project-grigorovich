@@ -1,6 +1,6 @@
-<div class="container user-content pt-80 pb-120">
+<div class="container user-content container-adaptive-vertical-padding">
 	<div class="row">
-		<div class="offset-1 col-10">
+		<div class="offset-lg-1 col-lg-10">
 			<div class="title-1">Добавить работу</div>
 
 			<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
@@ -33,7 +33,7 @@
 				</div>
 				<div class="works-add-form__item">
 					<label class="label">
-						Кратко о проекте
+						<span class="d-inline-block mb-10">Кратко о проекте</span>
 						<textarea id="ckEditor" 
 							class="textarea" 
 							type="text" 
@@ -45,7 +45,7 @@
 				</div>
 				<div class="works-add-form__item">
 					<label class="label">
-						Результат
+						<span class="d-inline-block mb-10">Результат</span>
 						<textarea id="ckEditor1" 
 							class="textarea" 
 							type="text" 
@@ -57,7 +57,7 @@
 				</div>
 				<div class="works-add-form__item">
 					<label class="label">
-						Технологии
+						<span class="d-inline-block mb-10">Технологии</span>
 						<textarea id="ckEditor2" 
 							class="textarea" 
 							type="text" 
@@ -68,7 +68,7 @@
 					</label>
 				</div>
 				<div class="row">
-					<div class="col-3">
+					<div class="col-md-6">
 						<label class="label">Ссылка на проект
 							<input class="input-text" 
 								type="text" 
@@ -77,7 +77,7 @@
 								value="<?=(trim(@$_POST['linkToProject']) != '' ) ? $_POST['linkToProject'] : '';?>" />
 						</label>
 					</div>
-					<div class="col-3">
+					<div class="col-md-6">
 						<label class="label">Код на github
 							<input class="input-text" 
 								type="text" 
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 				<div class="works-add-form__buttons">
-					<input class="button button-save" 
+					<input class="button button-save works-add-form__button" 
 						type="submit" 
 						value="Сохранить" 
 						name="workNew" />

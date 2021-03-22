@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="row contacts-edit-form__row">
-				<div class="form-button-save">
+				<div class="form-button-save contacts-edit-form__button">
 					<input class="button button-save" type="submit" value="Сохранить" name="contactsUpdate" />
 				</div>
 				<div class="form-button-cancel">

@@ -1,7 +1,7 @@
 <div class="sticky-footer-content">
-	<div class="container user-content pt-80 pb-120">
+	<div class="container container-adaptive-vertical-padding user-content">
 		<div class="row">
-			<div class="col-10 offset-1">
+			<div class="offset-lg-1 col-lg-10">
 				<div class="title-1 work-experience-title">Редактировать - Опыт работы</div>
 
 				<?php if ( isset($_GET['result']) ) {
