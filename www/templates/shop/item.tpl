@@ -1,4 +1,4 @@
-<div class="container user-content pt-70 pb-50 make-relative">
+<div class="container container-adaptive-small-vertical-padding user-content make-relative pb-50">
 	<!-- row -->
 	<div class="row">
 		<div class="offset-lg-1 col-lg-10">
