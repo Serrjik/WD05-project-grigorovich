@@ -1,7 +1,7 @@
 <div class="sticky-footer-content">
-	<div class="container user-content pt-80 pb-120">
+	<div class="container container-adaptive-vertical-padding user-content">
 		<div class="row">
-			<div class="col-10 offset-1">
+			<div class="col-lg-10 offset-lg-1">
 				<div class="title-1 post-add__title">Редактировать пост</div>
 
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
@@ -61,8 +61,8 @@
 							<?php include_once ROOT . "templates/_parts/_ckEditorConnect.tpl" ?>
 						</label>
 					</div>
-					<div class="post-add-form-button">
-						<input class="button button-save" type="submit" value="Сохранить" name="postUpdate" />
+					<div class="post-add-form-button flex-wrap align-items-start">
+						<input class="button button-save mb-20 mb-sm-0 mr-20" type="submit" value="Сохранить" name="postUpdate" />
 						<div class="post-add-form-button__cancel">
 							<a class="button" href="<?=HOST?>blog">Отмена</a>
 						</div>

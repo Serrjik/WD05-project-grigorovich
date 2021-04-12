@@ -1,4 +1,4 @@
-<div class="container user-content pt-70 make-relative">
+<div class="container user-content container-adaptive-small-padding-top make-relative">
 	<div class="row">
 		<div class="col-lg-10 offset-lg-1">
 		<?php if ( isAdmin() ) { ?>

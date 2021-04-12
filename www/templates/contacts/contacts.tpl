@@ -1,4 +1,4 @@
-<div class="container user-content pt-80 pb-80">
+<div class="container container-adaptive-vertical-medium-padding user-content">
 
 	<?php if ( isAdmin() ): ?>
 		<div class="row">
@@ -11,7 +11,7 @@
 
 	<div class="row">
 		<div class="col-md-6 contacts">
-			<div class="contacts__title">Контакты </div>
+			<div class="contacts__title">Контакты</div>
 
 			<!-- Функция выводит 1 запись в блоке "Контакты" -->
 			<?php function showContactItem($name, $title, $type = '') {

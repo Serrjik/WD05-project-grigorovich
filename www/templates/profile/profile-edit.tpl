@@ -1,5 +1,5 @@
 <div class="sticky-footer-content">
-	<div class="container user-content pt-45 pl-20">
+	<div class="container user-content pt-20 pt-lg-5 pl-20">
 		<div class="row">
 			<div class="offset-md-1 col-md-10">
 				<h1 class="title-1">Редактировать профиль</h1>

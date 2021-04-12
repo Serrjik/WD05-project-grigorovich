@@ -1,6 +1,6 @@
-<div class="container user-content pt-80 pb-120">
+<div class="container container-adaptive-vertical-padding user-content">
 	<div class="row">
-		<div class="col-10 offset-1">
+		<div class="col-lg-10 offset-lg-1">
 			<div class="title-1 post-add__title">Добавить пост</div>
 
 			<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>

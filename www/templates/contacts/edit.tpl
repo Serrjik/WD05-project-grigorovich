@@ -7,7 +7,7 @@
 ?>
 
 <div class="sticky-footer-content">
-	<div class="container user-content pt-70">
+	<div class="container user-content container-adaptive-small-padding-top">
 
 		<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
 

@@ -1,4 +1,4 @@
-<div class="comment mt-35 mb-120">
+<div class="comment">
 
 	<?php if ( isLoggedIn() ): ?>
 		<div id="errorBox" class="registration-form__error">

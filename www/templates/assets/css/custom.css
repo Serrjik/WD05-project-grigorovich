@@ -50,11 +50,6 @@ body::before {
 .work-logo-icon {
 	text-decoration: none;
 }
-
-.profile__button {
-	z-index: 2;
-}
-
 .content-center {
 	justify-content: center;
 }
