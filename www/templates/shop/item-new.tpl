@@ -1,4 +1,4 @@
-<div class="container user-content pt-80 pb-120">
+<div class="container container-adaptive-vertical-padding user-content">
 
 	<div class="title-1 post-add__title">Создать товар</div>
 
@@ -60,7 +60,8 @@
 		</div>
 
 		<div class="post-add-form__textarea">
-			<label class="label">Содержание
+			<label class="label">
+				<span class="d-block mb-10">Содержание</span>
 				<textarea id="ckEditor" 
 					class="textarea" 
 					type="text" 
@@ -71,7 +72,7 @@
 		</div>
 
 		<div class="post-add-form-button">
-			<input class="button button-save" 
+			<input class="button button-save mr-20 mb-20" 
 				type="submit" 
 				value="Сохранить" 
 				name="itemNew" />

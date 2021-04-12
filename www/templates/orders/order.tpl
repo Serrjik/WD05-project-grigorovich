@@ -8,12 +8,16 @@
 		<table class="table table-hover">
 			<thead>
 				<tr class="table-total">
-					<td></td>
-					<td>Наименование</td>
-					<td>Количество</td>
-					<td width="200">Стоимость</td>
+					<th>Наименование</th>
+					<th>Количество</th>
+					<th width="200">Стоимость</th>
 				</tr>
 			</thead>
+			<tbody>
+				<?php foreach ( $orderItems as $item ): ?>
+					<?php include ROOT . "templates/orders/_item-in-order-table-history.tpl" ?>
+				<?php endforeach ?>
+			</tbody>
 			<tfoot>
 				<tr class="table-total">
 					<td></td>
@@ -29,11 +33,6 @@
 					</td>
 				</tr>
 			</tfoot>
-			<tbody>
-				<?php foreach ( $orderItems as $item ): ?>
-					<?php include ROOT . "templates/orders/_item-in-order-table-history.tpl" ?>
-				<?php endforeach ?>
-			</tbody>
 		</table>
 	</div>
 

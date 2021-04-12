@@ -1,7 +1,7 @@
 <div class="sticky-footer-content">
-	<div class="container user-content pt-80 pb-120">
+	<div class="container container-adaptive-vertical-padding user-content">
 		<div class="row">
-			<div class="col-10 offset-1">
+			<div class="col-sm-10 offset-sm-1">
 				<div class="title-1 post-add__title">Создать новую категорию</div>
 
 				<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
@@ -13,7 +13,7 @@
 						</label>
 					</div>
 					<div class="post-add-form-button">
-						<input class="button button-save" type="submit" value="Сохранить" name="catNew" />
+						<input class="button button-save mr-20 mb-20" type="submit" value="Сохранить" name="catNew" />
 						<div class="post-add-form-button__cancel">
 							<a class="button" href="<?=HOST?>blog/categories">Отмена</a>
 						</div>

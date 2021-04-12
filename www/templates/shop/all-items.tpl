@@ -1,10 +1,10 @@
-<div class="container user-content pt-80">
+<div class="container container-adaptive-small-padding-top user-content">
 
 	<?php if ( isset($_GET['result']) ) {
 		include ROOT . "templates/shop/partials/_results.tpl";
 	} ?>
 
-	<div class="blog__header flex-column-reverse flex-md-row mb-502"><span>Магазин</span>
+	<div class="blog__header flex-column-reverse flex-md-row mb-50"><span>Магазин</span>
 		<?php if ( isAdmin() ) { ?>
 			<a class="button button-edit mb-25 mb-md-0"
 				href="<?=HOST?>shop/new">

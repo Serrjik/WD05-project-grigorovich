@@ -6,7 +6,7 @@
 	}
 ?>
 
-<div class="container user-content pt-80 pb-120">
+<div class="container container-adaptive-vertical-padding user-content">
 
 	<div class="title-1 post-add__title">Редактировать товар</div>
 
@@ -79,7 +79,7 @@
 		</div>
 
 		<div class="post-add-form-button">
-			<input class="button button-save" 
+			<input class="button button-save mr-20 mb-20" 
 				type="submit" 
 				value="Сохранить" 
 				name="itemUpdate" />

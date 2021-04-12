@@ -1,4 +1,4 @@
-<div class="container user-content pt-80 pb-80">
+<div class="container container-adaptive-vertical-medium-padding user-content">
 
 	<div class="title-1">Заказы в системе</div>
 
