@@ -180,6 +180,22 @@ hr,
     padding-top: 70px;
   }
 }
+.container-adaptive-low-medium-padding-top {
+  padding-top: 30px;
+}
+@media(min-width: 992px) {
+  .container-adaptive-low-medium-padding-top {
+    padding-top: 80px;
+  }
+}
+.container-adaptive-medium-padding-top {
+  padding-top: 30px;
+}
+@media(min-width: 992px) {
+  .container-adaptive-medium-padding-top {
+    padding-top: 90px;
+  }
+}
 .container-order {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1746,6 +1762,9 @@ a.message-author--email {
   line-height: 1.5;
   color: #fff;
 }
+.footer__text p:last-child {
+  margin-bottom: 0;
+}
 .footer__text p span {
   color: #d10946;
 }
@@ -1805,8 +1824,13 @@ a.message-author--email {
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: top center, bottom center, center center;
   background-size: contain, contain, cover;
-  height: 100vh;
-  padding: 45px 50px 25px;
+  min-height: 100vh;
+	padding: 45px 0 25px;
+}
+@media(min-width:500px) {
+	.registration-wrapper {
+		padding: 45px 50px 25px;
+	}	
 }
 .registration-header-wrapper {
   display: -webkit-box;
@@ -1815,14 +1839,21 @@ a.message-author--email {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .registration-form {
   margin: 0;
-  padding: 5px 30px 35px;
+  padding: 5px 15px 35px;
   -webkit-box-shadow: 5px 9px 40px #63758a;
   box-shadow: 5px 9px 40px #63758a;
   background-color: rgba(18, 45, 61, 0.6);
   border-radius: 7px;
+}
+@media(min-width:500px) {
+	.registration-form {
+		padding: 5px 30px 35px;
+	}	
 }
 .registration-form__caption {
   text-align: center;
@@ -1864,15 +1895,15 @@ a.message-author--email {
 .login a {
   color: #fefefe;
   font-family: 'Open Sans', sans-serif;
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1;
   text-decoration: underline;
 }
 @media(min-width:500px) {
   .login a {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 26px;
+    font-weight: 600;
   }
 }
 .user-comment {
@@ -2016,11 +2047,16 @@ a.message-author--email {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  padding: 20px 0 125px;
+  padding: 20px 0 50px;
 }
 @media(min-width: 500px) {
   .buttons-navigation {
     flex-direction: row;
+  }
+}
+@media(min-width: 992px) {
+  .buttons-navigation {
+    padding-bottom: 125px;
   }
 }
 .buttons-navigation .fa-arrow-left {
@@ -2110,9 +2146,12 @@ a.message-author--email {
   padding-top: 12px;
   padding-bottom: 25px;
 }
+.profile-user__avatar {
+  margin-bottom: 20px;
+}
 @media(min-width: 576px) {
   .profile-user__avatar {
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 }
 .profile-user-description {
@@ -2545,11 +2584,22 @@ a.message-author--email {
   }
 }
 .edit-about-me-form {
-  margin-top: 35px;
-  margin-bottom: 120px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+@media(min-width: 992px) {
+  .edit-about-me-form {
+    margin-top: 35px;
+    margin-bottom: 120px;
+  }
 }
 .edit-about-me-form__row {
-  margin-bottom: 27px;
+  margin-bottom: 15px;
+}
+@media(min-width: 992px) {
+  .edit-about-me-form__row {
+    margin-bottom: 27px;
+  }
 }
 .form-button-save {
   margin-left: 15px;

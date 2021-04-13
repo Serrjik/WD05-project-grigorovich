@@ -1,4 +1,4 @@
-<div class="container user-content pt-80">
+<div class="container container-adaptive-low-medium-padding-top user-content">
 
 	<?php if ( isset($_GET['result']) ) {
 		include ROOT . "templates/blog/_results.tpl";
