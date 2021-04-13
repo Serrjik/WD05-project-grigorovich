@@ -7,7 +7,7 @@
 ?>
 
 <div class="sticky-footer-content">
-	<div class="container user-content pt-45 pl-20">
+	<div class="container user-content pt-20 pt-lg-5">
 		<div class="row">
 			<div class="offset-md-1 col-md-10">
 				<h1 class="title-1">Редактировать - Обо Мне</h1>
@@ -54,7 +54,8 @@
 
 					<div class="row edit-about-me-form__row">
 						<div class="col">
-							<label class="label">Информация на главной
+							<label class="label">
+								<span class="d-inline-block mb-10">Информация на главной</span>
 								<textarea id="ckEditor" 
 									class="textarea" 
 									type="text" 

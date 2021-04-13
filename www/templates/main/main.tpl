@@ -3,7 +3,7 @@
 </div>
 <div class="hr-line"></div>
 <!-- Новые работы -->
-<div class="container user-content pt-90 mb-30">
+<div class="container container-adaptive-medium-padding-top user-content mb-30">
 	<div class="works__header mb-25 title-1 justify-content-center justify-content-lg-start">
 		<span><strong>Новые <a href="<?=HOST?>portfolio" target="_blank">работы</a></strong></span>
 	</div>

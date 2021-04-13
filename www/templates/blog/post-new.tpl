@@ -48,7 +48,7 @@
 					</label>
 				</div>
 				<div class="post-add-form-button">
-					<input class="button button-save" type="submit" value="Сохранить" name="postNew" />
+					<input class="button button-save mr-20 mb-20 mb-sm-0" type="submit" value="Сохранить" name="postNew" />
 					<div class="post-add-form-button__cancel">
 						<a class="button" href="<?=HOST?>blog">Отмена</a>
 					</div>
