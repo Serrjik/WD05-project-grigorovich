@@ -84,11 +84,6 @@ body::before {
 .card-post__image-holder {
 	overflow: hidden;
 }
-
-.contacts__value--bold-link {
-	display: block;
-}
-
 .delete {
 	z-index: 2;
 }
