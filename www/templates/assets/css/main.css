@@ -1855,6 +1855,11 @@ a.message-author--email {
 		padding: 5px 30px 35px;
 	}
 }
+@media(max-height:590px) {
+	.registration-form {
+    margin-bottom: 20px;
+	}
+}
 .registration-form__caption {
   text-align: center;
   color: #ffffff;

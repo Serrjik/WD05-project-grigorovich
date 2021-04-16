@@ -20,7 +20,7 @@
 				if ( @$contacts[$name] != "" ) { ?>
 					<div class="row">
 						<div class="col-4 contacts__name"><?=$title?></div>
-						<div class="col-8 col-sm-6 contacts__value contacts__value--link">
+						<div class="col-8 col-sm-7 contacts__value contacts__value--link">
 							<?php if ( $name == 'email' ): ?>
 								<a href="mailto:<?=$contacts[$name]?>"
 									target="_blank" >
@@ -59,7 +59,7 @@
 			<?php if ( ($contacts['vkontakte'] != "") || ($contacts['facebook'] != "") || ($contacts['twitter'] != "") ): ?>
 			<div class="row mb-15">
 				<div class="col-4 contacts__name">Социальные сети</div>
-				<div class="col-8 col-sm-6 contacts__value">
+				<div class="col-8 col-sm-7 contacts__value">
 					<?php if ( $contacts['vkontakte'] != "" ): ?>
 						<a class="contacts__value--bold-link" href="<?=$contacts['vkontakte']?>"
 							target="_blank" >
@@ -88,7 +88,7 @@
 
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 mt-25 mt-md-0">
 
 			<!-- Вывод ошибок и успехов -->
 			<?php require ROOT . 'templates/_parts/_errors.tpl'; ?>
